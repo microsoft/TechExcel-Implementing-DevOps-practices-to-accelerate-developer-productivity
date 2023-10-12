@@ -1,14 +1,13 @@
 # Set up development environment
 
-### Introduction
-
-One common challenge with development with an organization is getting developers machines configured properly. It can be even further complicated when you need all the developers to be working in a uniform environment and all configured the same way. Within the Microsoft cloud, Microsoft has created Microsoft Dev Box as a solution for addressing this issue. It allows an organization to create a virtual desktop environment geared specifically at developers so you can ensure that your developers are working from machines configured the same way with the same version of software deployed to them. In this exercise, you'll configure a Microsoft Dev Box environment.
-
 ## Task 01: Deploy the necessary prerequisites required for a Microsoft Dev Box
+
+
+One common challenge with development with an organization is getting developers machines configured properly. It can be even further complicated when you need all the developers to be working in a uniform environment and all configured the same way. Within the Microsoft cloud, Microsoft has created Microsoft Dev Box as a solution for addressing this issue. It allows an organization to create a virtual desktop environment geared specifically at developers so you can ensure that your developers are working from machines configured the same way with the same version of software deployed to them. In these next few tasks, you'll configure a Microsoft Dev Box environment.
 
 ### Description
 
-Microsoft Dev Box requires the proper infrastructure and resources to be deployed in Azure before you can start deploying virtual machines to users. In this excercise, you'll prep your azure environment for deploying Dev Boxes.
+Microsoft Dev Box requires the proper infrastructure and resources to be deployed in Azure before you can start deploying virtual machines to users. In this exercise, you'll prep your azure environment for deploying Dev Boxes.
 
 ### Success Criteria
 
