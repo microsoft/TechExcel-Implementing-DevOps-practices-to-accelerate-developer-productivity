@@ -1,6 +1,6 @@
-# Set up development environment
+# Exercise 01 - Set up development environment
 
-## Task 01: Deploy the necessary prerequisites required for a Microsoft Dev Box
+## Task 01 - Deploy the necessary prerequisites required for a Microsoft Dev Box
 
 
 One common challenge with development with an organization is getting developers machines configured properly. It can be even further complicated when you need all the developers to be working in a uniform environment and all configured the same way. Within the Microsoft cloud, Microsoft has created Microsoft Dev Box as a solution for addressing this issue. It allows an organization to create a virtual desktop environment geared specifically at developers so you can ensure that your developers are working from machines configured the same way with the same version of software deployed to them. In these next few tasks, you'll configure a Microsoft Dev Box environment.
@@ -24,7 +24,7 @@ Microsoft Dev Box requires the proper infrastructure and resources to be deploye
 - [Microsoft Dev Box Prerequisites](https://learn.microsoft.com/azure/dev-box/quickstart-configure-dev-box-service?tabs=AzureADJoin#prerequisites)
 - [Dev Box Catalogs](https://learn.microsoft.com/azure/deployment-environments/how-to-configure-catalog)
 
-## Task 02: Setup an image
+## Task 02 - Setup an image
 
 ### Description
 
@@ -33,26 +33,26 @@ Typically, when a developer needs to have an environment configured for their de
 ### Success Criteria
 
 - Create a compute gallery & add it to the Dev center
-- Configuration
-  - Disable IE Enhanced Security Configuration
 - Must include the following software
-  - PowerShell  
   - Docker: https://docs.docker.com/desktop/install/windows-install/
-    - Uncheck "Use WSL 2 instead of Hyper-V"
-    - Will require a restart. Do it last, or just wait to click the restart button until finished installing all the others below.
+    - After install docker, you'll see an error. You can ignore it for now. WSL and Sysprep have an issue requiring an extra step when users first log into their dev box later.
+    - Will require a restart. You can install last, or just wait to click the restart button until finished installing all the others below.
   - Visual Studio Code (System Installer): https://code.visualstudio.com/Download
+    - Make sure this finishes before installing Git so you can set it as the default editor
   - Java (for JMeter): https://www.java.com/en/download/
   - Apache JMeter: https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip
     - Extract the apache-jmeter-5.6.2 folder to C:\
   - Azure Storage Explorer (Install for all users): https://azure.microsoft.com/products/storage/storage-explorer/
   - Git bash: https://git-scm.com/download/win
-    - 64bit git for Windows
+    - 64bit git for Windows Setup
     - You may want to set the default editor to VSCode, keep the defaults for everything else.
   - .NET SDK 6.0 LTS: https://dotnet.microsoft.com/download/visual-studio-sdks
     - .NET 6.0 x64 Visual Studio 2022 SDK
+- You should make sure you reboot at this point in time and Docker is running before doing the sysprep
 - Sysprep
-  - If you get an error, you may need to Uninstall OneDrive from the programs and features
-  - Open PowerShell as an admin and run: Get-AppxPackage -AllUsers Microsoft.OneDriveSync | Remove-AppxPackage -AllUsers
+  - Delete C:\Windows\Panther and empty the recycle bin
+  - Run the following in PowerShell as an admin to fix an issue with OneDrive and Sysprep: ```Get-AppxPackage -AllUsers Microsoft.OneDriveSync | Remove-AppxPackage -AllUsers```
+  - In the same PowerShell Windows CD to C:\Windows\System32\SysPrep and run ```.\sysprep.exe /oobe /generalize /shutdown```
 - Create the new image
   - For the VM image definition, create a new one with the name "DevBoxProject", leave everything else the default
   - VM version number can be 1.0.0
@@ -61,7 +61,6 @@ Typically, when a developer needs to have an environment configured for their de
 
 ### Learning Resources
 
-- [Create a Dev Box custom image](https://learn.microsoft.com/azure/dev-box/how-to-customize-devbox-azure-image-builder)
 - [Create a Dev Box Definition](https://learn.microsoft.com/azure/dev-box/quickstart-configure-dev-box-service?tabs=AzureADJoin#3-create-a-dev-box-definition)
 - [Generalize a VM](https://learn.microsoft.com/azure/virtual-machines/generalize)
 - [Create an image from a VM](https://learn.microsoft.com/azure/virtual-machines/capture-image-portal)
@@ -72,7 +71,7 @@ Typically, when a developer needs to have an environment configured for their de
 - For the image creation, use the VM Size: Standard D4s v3 (4 vcpus, 16 GiB memory) with a Windows 10 or 11 Image
 - For security, once you create the VM with RDP access, go into the networking settings and set the RDP access Source to be limited to your IP address
 
-## Task 03: Deploy a Microsoft Dev Box
+## Task 03 - Deploy a Microsoft Dev Box
 
 ### Description
 
