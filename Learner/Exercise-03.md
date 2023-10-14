@@ -1,6 +1,6 @@
-# Exercise 03 - Improve and deploy your application
+# Exercise 03 - Improve and deploy your application (?? minutes)
 
-## Task 1 - Configure Microsoft Copilot on your Dev Box
+## Task 1 - Configure Microsoft Copilot on your Dev Box (?? minutes)
 
 ### Introduction
 
@@ -22,7 +22,7 @@ TODO
 
 TODO
 
-## Task 2 - Change the application
+## Task 2 - Change the application (15 minutes)
 
 ### Introduction
 
@@ -63,7 +63,7 @@ Your code change did not affect any unit tests. In practice, this is a sign that
 
 Use GitHub Copilot to assist in creating the appropriate unit tests.
 
-## Task 3 - Introduce infrastructure as code
+## Task 3 - Introduce infrastructure as code (20 minutes)
 
 ### Introduction
 
@@ -123,7 +123,7 @@ Instead of changing the environment variable for each environment that we want t
 
 - Configure your workflow to collect the environment name as a [workflow input](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_callinputs) and use that value to override the environment parameter when calling the Bicep template.
 
-## Task 4 - Build, Push, and Deploy Changes
+## Task 4 - Build, Push, and Deploy Changes (40 minutes)
 
 ### Introduction
 

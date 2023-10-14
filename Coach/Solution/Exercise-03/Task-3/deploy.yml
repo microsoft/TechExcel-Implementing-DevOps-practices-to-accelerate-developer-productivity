@@ -1,0 +1,27 @@
+on:
+  workflow_dispatch
+
+env:
+  targetEnv: dev
+
+name: Azure Bicep
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    # Checkout code
+    - uses: actions/checkout@main
+
+      # Log into Azure
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Deploy ARM template
+    - name: Run ARM deploy
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+        resourceGroupName: ${{ vars.AZURE_RG }}
+        template: ./InfrastructureAsCode/main.bicep
+        parameters: environment=${{ env.targetEnv }}
