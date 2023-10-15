@@ -41,7 +41,8 @@ Now you're ready to start creating a custom image to deploy your Dev Box.
       - Virtual Machine name: DevMPPTeamMessagingImage
       - Availability options: No infrastructure redundancy required
       - Security type: Trusted launch virtual machines
-      - Images: Windows 11 Pro, version 22H2 - x64 Gen2
+      - Images: Windows 11 Enterprise, version 22H2 - x64 Gen2
+        - **Note: Make sure you select enterprise and not pro. Pro is not supported for Dev Box.** 
       - Size: Standard_D4s_v5
       - Username: DevBoxAdmin
       - Password: something you'll remember
@@ -62,7 +63,8 @@ Now you're ready to start creating a custom image to deploy your Dev Box.
     ![VM Network RDP](Media/VMNetworkRDP.png)
 7. RDP Into the box and download/install the software.
    1. These are all pretty straight forward, just make sure they all get installed for all users
-   2. An error with Docker after the install is fine, just ignore it and do the sysprep
+   2. Before running sysprep, shut down the VM and take a snapshot. Once you perform a sysprep you can't start the VM back up again without using this snapshot.
+   3. An error with Docker after the install is fine, just ignore it and do the sysprep
 8. After the Windows machine shuts down due to sysprep, navigate to your virtual machine in Azure.
 9. Select Capture
     ![Capture the VM Image](Media/CaptureVM.png)

@@ -51,13 +51,14 @@ Typically, when a developer needs to have an environment configured for their de
 - You should make sure you reboot at this point in time and Docker is running before doing the sysprep
 - Sysprep
   - Delete C:\Windows\Panther and empty the recycle bin
-  - Run the following in PowerShell as an admin to fix an issue with OneDrive and Sysprep: ```Get-AppxPackage -AllUsers Microsoft.OneDriveSync | Remove-AppxPackage -AllUsers```
-  - In the same PowerShell Windows CD to C:\Windows\System32\SysPrep and run ```.\sysprep.exe /oobe /generalize /shutdown```
+  - In the command prompt, CD to C:\Windows\System32\SysPrep and run ```.\sysprep.exe /oobe /generalize /shutdown```
 - Create the new image
   - For the VM image definition, create a new one with the name "DevBoxProject", leave everything else the default
   - VM version number can be 1.0.0
   - Default storage sku: Premium SD LRS
   - Review + create --> Create
+
+**Note:** If you ever need to go back and update your image, you'll need to restore from the snapshot, make your updates, create a new snapshot, and run sysprep again.
 
 ### Learning Resources
 
