@@ -1,6 +1,6 @@
-# Exercise 02 - Start working in GitHub
+# Exercise 02 - Start working in GitHub (45 minutes)
 
-## Task 1 - Set up a GitHub repository
+## Task 1 - Set up a GitHub repository (10 minutes)
 
 ### Introduction
 
@@ -13,7 +13,7 @@ In this task, you will ensure that you have a GitHub repository set up with the 
 The key tasks are as follows:
 
 1. Create a new GitHub repository in the context of your organization or account.
-2. Obtain the sample application and Bicep template from the Files tab in Microsoft Teams.  (TODO:  is this the correct location?)
+2. Obtain the sample application and Bicep template from the starter GitHub repository.  (TODO:  need starter repo)
 3. Commit the files to your GitHub repository using your preferred Git client.
 
 ### Success Criteria
@@ -33,7 +33,7 @@ The key tasks are as follows:
 - For a concise explanation of adding files to a repository via the command line, see [here](https://docs.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line).
 - To see how it's done in the GitHub portal, check [here](https://docs.github.com/en/github/managing-files-in-a-repository/managing-files-on-github).
 
-## Task 2 - Track your work
+## Task 2 - Track your work (15 minutes)
 
 ### Introduction
 
@@ -82,7 +82,7 @@ The key tasks are as follows:
 - [Adding issues to a project](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-items-in-your-project/adding-items-to-your-project)
 - [Customizing views](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/customizing-a-view)
 
-## Task 3 - Set up a GitHub Actions workflow
+## Task 3 - Set up a GitHub Actions workflow (20 minutes)
 
 ### Introduction
 

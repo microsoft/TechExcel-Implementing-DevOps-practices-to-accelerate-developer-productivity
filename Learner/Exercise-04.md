@@ -19,6 +19,12 @@ In this task, you will create a load testing strategy to describe your plan and 
 - Identify potential bottlenecks or limitations in advance.
 - Identify any assumptions or risks in your plan.
 
+Although the Team Messaging System itself does not experience heavy utilization throughout the day, the development team has asked you to consider a similar application with the following usage profile:
+
+- The majority of utilization happens during business hours, which are 8 AM until 5 PM Central time in the United States.
+- During normal business hours, the average daily load is 1000 users per hour and users interact with all system endpoints, not just a subset.
+- There are no external APIs or automated systems which add an appreciable amount of workload to the application.
+
 1. Create a load testing strategy based on the Team Messaging System application.
 
 ### Success Criteria
@@ -100,7 +106,7 @@ The team at Munson's Pickles and Preserves is excited about the possibilities of
 4. Decide whether you should add stress test remediation steps as GitHub Issues.
 5. Use Azure Chaos Studio to design a Chaos experiment.
 6. After ensuring that you have a recent baseline test, run a load test.
-7. During the load test, start the Chaos experiment and note the failures.
+7. During the load test, start the Chaos experiment and note the failures. Note that there is, at present, no GitHub Action for Chaos experiments, so you will need to run this manually, outside of a GitHub Actions workflow.
 8. Prioritize the failure points arising from the Chaos experiment and build an action plan to remediate.
 
 ### Success Criteria
@@ -116,7 +122,4 @@ The team at Munson's Pickles and Preserves is excited about the possibilities of
 [Adding Monitoring to Load Testing](https://docs.microsoft.com/en-us/azure/load-testing/how-to-appservice-insights)
 [Learn more about stress testing](https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/performance-test#stress-testing)
 [What is Azure Chaos Studio](https://docs.microsoft.com/en-us/azure/chaos-studio/chaos-studio-overview)
-
-### Advanced Challenges (optional)
-
-Add your Chaos Experiment to your CI/CD workflow and configure it to run during your load test.
+[Create and run a chaos experiment using Azure Chaos Studio](https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-quickstart-azure-portal)
