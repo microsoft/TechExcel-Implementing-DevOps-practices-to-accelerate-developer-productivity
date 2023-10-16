@@ -85,8 +85,10 @@ We will use GitHub Actions to automate the deployment of our Azure infrastructur
 1. Review the Bicep template. Notice how it includes the configuration settings for an App Service Plan, a Web App, Application Insights, and Azure Container Registry into your resource group.
 2. Review the use of the `uniqueString` function. This helps create unique names for your resources. This function is not random, but is instead a hash function based on your resource group ID, which provides a consistent but likely unique 13-character string. This function is useful to avoid naming conflicts in Azure.
 3. Review the `environment` and `location` parameters. These have default values but you are able to override them as well in order to create other resources in different environments.
-4. Create a resource group. Then, create a service principal to log into Azure. The service principal should have Contributor access to the resource group you just created.
-5. Create a GitHub repository-level secret to store the service principal's credentials. Create a second repository-level secret to store the name of the Azure resource group.
+4. Create a resource group. Then, create a service principal to log into Azure. The service principal should have Contributor access to the resource group you just created. You can create this service principal with the following steps:
+   1. Create an Application registration and service principal in Microsoft Entra ID, either through the Azure portal or az cli.
+   2. Use the command `az ad sp create-for-rbac` to create a JSON output containing client details, including the client ID and client secret. Copy that JSON output.
+5. Create a GitHub repository-level secret to store the service principal's credentials, calling it `AZURE_CREDENTIALS`. Create a second repository-level secret to store the name of the Azure resource group, calling this `AZURE_RG`. Create a third repository-level secret to store the name of the Azure subscription, calling it `AZURE_SUBSCRIPTION_ID`.
 6. Create a new GitHub Actions workflow called `deploy.yml`. This workflow should run on a manual trigger--that is, *not* triggered by a push or pull request.
 7. Configure the workflow to accomplish the following tasks:
     1. Use a service principal to log into Azure using your secret and configuration variable values.
