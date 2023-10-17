@@ -94,3 +94,5 @@ Now you're ready to start creating a custom image to deploy your Dev Box.
    ![Dev Box Pool Settings](Media/DevBoxPoolSettings.png)
 7. Finally, for the Project, under Access control, assign yourself and any other users to be a "DevCenter Dev Box Users"
     ![Assign permissions](Media/AssignPermissions.png)
+
+**Notes:** At this point in time, Docker doesn't appear to work if it was installed on the image and may need an uninstall/re-install

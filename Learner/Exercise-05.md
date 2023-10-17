@@ -4,33 +4,36 @@
 
 ### Introduction
 
-In the previous steps, we successfully implemented an end-to-end CI/CD pipeline! However, our current workflow will immediately promote every small change directly to production. Typically, you would want to avoid working directly against the main branch in your repository to avoid conflicts and protect the production environment. 
+In the previous exercises, we successfully implemented an end-to-end CI/CD pipeline! However, the current workflow will immediately promote every small change directly to production. This isn't an ideal scenario, especially when Munson's Pickles and Preserves is making updates to the Team Messaging System after it's been promoted to production or is even in the testing phase. Best practices are to avoid working directly against the main branch in your repository to avoid conflicts and protect the production environment.
 
-With GitHub, we can solve these challenges using a practice called branching. Some may refer to this as the [GitHub flow](https://guides.github.com/introduction/flow/). When a developer wants to make a change, add a feature, or fix a bug, he or she begins by creating a new 'branch' or copy of the main codebase. Then, the developer makes changes and commits them. He or she creates a pull request to merge these changes back into the main branch. This pull request may or may not involve some testing or discussion. Finally, changes are merged back into the main codebase, and the branch can be deleted. 
+With GitHub, Munson's Pickles and Preserves can solve these challenges using a practice called branching. Some may refer to this as the [GitHub flow](https://guides.github.com/introduction/flow/). When a developer wants to make a change, add a feature, or fix a bug, the developer begins by creating a new 'branch' or copy of the main codebase. Then, the developer makes changes and commits them. A pull request is created to merge these changes back into the main branch. This pull request may or may not involve some testing, discussion and approval. Finally, changes are merged back into the main codebase, and the branch can be deleted.
 
 In this challenge, you will practice this flow. Additionally, GitHub offers a feature for explicitly protecting against changes directly to the main branch. These are called branch protection rules, and you will start by implementing one.
 
 ### Description
 
 - Create a branch protection rule which prevents developers from committing changes to the main branch in the repository.
-- Create a feature branch, make a small change to the code (i.e.,`/Application/aspnet-core-dotnet-core/Views/Home/Index.cshtml`), and sync this branch with the GitHub repository.
+- Create a feature branch, make a small change to the code (i.e.,`/Application/src/RazorPagesTestSample/Pages/Index.cshtml`), and sync this branch with the GitHub repository.
 - Define a code owner for the `/Application` directory. Your branch policy should require a review from the code owner.
 - Create and complete a Pull Request, merging your code change into the protected branch.
 
 ### Success Criteria
 
-- You have a branch protection rule which prevents changes from being commited to your main branch.
-- Changes to the application (i.e.,`/Application/aspnet-core-dotnet-core/Views/Home/Index.cshtml`) are committed to a feature branch.
+- You have a branch protection rule which prevents changes from being committed to your main branch.
+- Changes to the application (i.e.,`/Application/src/RazorPagesTestSample/Pages/Index.cshtml`) are committed to a feature branch.
 - Before a pull request is completed:
   - A code owner must approve the changes ([hint](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-code-owners))
-  - A CI workflow is run against the feature branch ensuring the application passes a build and test ([hint](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/enabling-required-status-checks))
 - A completed pull request merges with the protected branch and is automatically deployed to the dev environment.
 
 ### Learning Resources
 
-- General information about protected branches can be found [here](https://docs.github.com/en/github/administering-a-repository/about-protected-branches), with more configuration specifics [here](https://docs.github.com/en/github/administering-a-repository/configuring-protected-branches).
-- General information about branches can be found [here](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-branches), with more specifics about creation and deletion [here](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository).
-- General information about pull requests can be found [here](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests), with more specifics about [creating](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) and [reviewing](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests).
+- [General information about protected branches](https://docs.github.com/en/github/administering-a-repository/about-protected-branches)
+- [Protected branches configuration specifics here](https://docs.github.com/en/github/administering-a-repository/configuring-protected-branches).
+- [General information about branches](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-branches)
+- [Branching specifics about creation and deletion here](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository).
+- [General information about pull requests](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
+- [Create pull request specifics](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+- [Reviewing pull requests](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests).
 - [About code owners](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-code-owners)
 - [Enabling required status checks](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/enabling-required-status-checks)
 - [About required reviews for pull requests](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-required-reviews-for-pull-requests)
@@ -67,9 +70,9 @@ In this challenge, you will improve the security of your repository using some o
 
 ### Learning Resources
 
-- Learn more about adding a security policy to your repository [here](https://docs.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository).
-- Learn more about Dependabot and vulnerable dependencies [here](https://docs.github.com/en/github/managing-security-vulnerabilities/managing-vulnerabilities-in-your-projects-dependencies).
-- Learn more about automated code scanning and understanding results [here](https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code).
+- [Learn more about adding a security policy to your repository](https://docs.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository).
+- [Learn more about Dependabot and vulnerable dependencies](https://docs.github.com/en/github/managing-security-vulnerabilities/managing-vulnerabilities-in-your-projects-dependencies).
+- [Learn more about automated code scanning and understanding results](https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code).
 
 ### Tips
 
