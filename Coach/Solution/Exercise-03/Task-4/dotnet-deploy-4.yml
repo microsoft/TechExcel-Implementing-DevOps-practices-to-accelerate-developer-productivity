@@ -47,7 +47,6 @@ jobs:
           });
       
   dockerBuildPush:
-    
     runs-on: ubuntu-latest
 
     steps:
@@ -59,7 +58,7 @@ jobs:
       uses: docker/login-action@v1.9.0
       with:
         # Server address of Docker registry. If not set then will default to Docker Hub
-        registry: ${{ env.registryName }}
+        registry: ${{ secrets.ACR_LOGIN_SERVER }}
         # Username used to log against the Docker registry
         username: ${{ secrets.ACR_USERNAME }}
         # Password or personal access token used to log against the Docker registry
@@ -76,10 +75,10 @@ jobs:
   deploy-to-dev:
   
     runs-on: ubuntu-latest
-    needs: docker-build-and-push
+    needs: dockerBuildPush
     environment:
       name: dev
-      url: https://{your_prefix}devopsreg-dev.azurewebsites.net/
+      url: https://{your_prefix}-dev.azurewebsites.net/
     
     steps:
       - name: 'Login via Azure CLI'
@@ -89,8 +88,8 @@ jobs:
 
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: 'devopsreg-dev'
-          images: ${{secrets.ACR_NAME}}/$repositoryName:${{github.run_number}}
+          app-name: '{your_prefix}-dev'
+          images: {your_registry_name}.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
 
   deploy-to-test:
   
@@ -98,7 +97,7 @@ jobs:
     needs: deploy-to-dev
     environment:
       name: test
-      url: https://{your_prefix}devopsreg-test.azurewebsites.net/
+      url: https://{your_prefix}-test.azurewebsites.net/
     
     steps:
     - uses: actions/checkout@v3
@@ -110,8 +109,8 @@ jobs:
 
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 'devopsreg-test'
-        images: ${{secrets.ACR_NAME}}/$repositoryName:${{github.run_number}}
+        app-name: '{your_prefix}-test'
+        images: {your_registry_name}.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
 
   deploy-to-prod:
   
@@ -119,7 +118,7 @@ jobs:
     needs: deploy-to-test
     environment:
       name: prod
-      url: https://{your_prefix}devopsreg-prod.azurewebsites.net/
+      url: https://{your_prefix}-prod.azurewebsites.net/
     
     steps:
     - uses: actions/checkout@v3
@@ -131,5 +130,5 @@ jobs:
 
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 'devopsreg-prod'
-        images: ${{secrets.ACR_NAME}}/$repositoryName:${{github.run_number}}
+        app-name: '{your_prefix}-prod'
+        images: {your_registry_name}.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}

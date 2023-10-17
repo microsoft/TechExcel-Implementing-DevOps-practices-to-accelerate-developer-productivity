@@ -2,6 +2,8 @@ name: First Workflow
 
 on:
   workflow_dispatch:
+  issues:
+    types: [opened]
 
 jobs:
   job1:
@@ -21,5 +23,5 @@ jobs:
     - name: Cowsays
       uses: mscoutermarsh/cowsays-action@master
       with:
-        text: 'Moo!'
-        color: 'red'
+        text: 'Ready for prod--ship it!'
+        color: 'magenta'

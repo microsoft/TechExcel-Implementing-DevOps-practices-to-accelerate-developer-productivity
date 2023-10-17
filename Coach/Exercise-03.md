@@ -17,6 +17,10 @@ TODO
 
 ## Task 3 - Introduce infrastructure as code
 
+- The following az cli commands will create an application registration and then service principal. This uses a sample app registration name of `TechExcelUser`.
+  - `az ad app create --display-name TechExcelUser`. Copy the "appId" output to use in the next command.
+  - `az ad sp create --id {appId}`
+  - `az ad sp create-for-rbac --name "TechExcelUser" --role contributor --scopes /subscriptions/{subscription_id}/resourceGroups/{resource_group_name} --json-auth`. The output of this command should be the `AZURE_CREDENTIALS` secret.
 - The solution for this task is a YAML file in [the solutions folder](./Solution/Exercise-03/Task-3/deploy.yml).
 - The solution for the advanced variant of this task is a separate YAML file in [the solutions folder](./Solution/Exercise-03/Task-3/deploy-advanced.yml).
 
@@ -28,3 +32,4 @@ TODO
   - The [third version of the solution file](./Solution/Exercise-03/Task-4/dotnet-deploy-3.yml) adds in steps 13-15.
   - The [fourth version of the solution file](./Solution/Exercise-03/Task-4/dotnet-deploy-4.yml) adds in the advanced challenge.
 - **Note:** the deployment YAML files will not run on their own because they include sections which require developer input, such as `{your_prefix}` and `{your_registry_name}`. Filling these in with appropriate values is necessary to get the .yml files in the appropriate condition to run.
+- **Note:** the `images` command in each `webapps-deploy` call has a hard-coded value for the image location of `techboost/dotnetcoreapp` and expect you to hard-code the ACR location. This is because the `images` command will not accept repository secrets or variables defined in the workflow like the steps in the `dockerBuildPush` job do.

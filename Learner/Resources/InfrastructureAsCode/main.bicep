@@ -10,7 +10,7 @@ var appInsightsName = '${uniqueString(resourceGroup().id)}-mpnp-ai'
 var sku = 'S1'
 var registryName = '${uniqueString(resourceGroup().id)}mpnpreg'
 var registrySku = 'Standard'
-var imageName = 'mpnpimage'
+var imageName = 'techboost/dotnetcoreapp'
 var startupCommand = ''
 
 
