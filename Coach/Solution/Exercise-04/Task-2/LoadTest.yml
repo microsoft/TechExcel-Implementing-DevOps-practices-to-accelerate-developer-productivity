@@ -1,23 +1,17 @@
-# TODO:  update!
-# This is a basic workflow to help you get started with Actions
-
 name: Load Test Trigger
 
-# Controls when the workflow will run
 on:
   push:
       branches:
         - main
+  workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: "loadtestwth"    # set this to your application's name
-  LOAD_TEST_RESOURCE: "loadtestwth"
-  LOAD_TEST_RESOURCE_GROUP: "loadtestwtheastus-rg"
+  AZURE_WEBAPP_NAME: "{your_prefix}-dev"    # set this to your application's name
+  LOAD_TEST_RESOURCE: "{load_test_resource_name}"   # set this to your Azure Load Test resource's name
+  LOAD_TEST_RESOURCE_GROUP: "{resource_group_name}" # set this to the resource group you've used for this training
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-        
   loadTest:
     name: Load Test
     runs-on: ubuntu-latest
@@ -44,13 +38,13 @@ jobs:
               "value": "${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net"
               }
             ]  
-            
-      - uses: JasonEtco/create-an-issue@v2
+
+      - uses: JasonEtco/create-an-issue@v2.9.1
         if: ${{ failure() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: .github/ISSUE_TEMPLATE/LoadTest.md
+          filename: .github/ISSUE_TEMPLATE/load_test_report.md
           
       - uses: actions/upload-artifact@v2
         with:
