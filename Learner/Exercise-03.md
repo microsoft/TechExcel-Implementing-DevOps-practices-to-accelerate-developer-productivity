@@ -97,6 +97,7 @@ We will use GitHub Actions to automate the deployment of our Azure infrastructur
 8. Manually run your workflow. When your workflow completes successfully, go to the Azure portal to see the `dev` environment.
 9. Run the workflow a second time, this time overriding the environment parameter with `test` instead of `dev`. When your workflow completes successfully, go to the Azure portal to see the new `test` App Service.
 10. Run the workflow a third time, this time overriding the environment parameter with `prod` instead of `dev`. When your workflow completes successfully, go to the Azure portal to see the new `prod` App Service.
+11. Ensure that Application Insights is enabled for each of the three App Services.
 
 ### Success Criteria
 

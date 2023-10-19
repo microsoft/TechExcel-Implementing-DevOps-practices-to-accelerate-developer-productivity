@@ -1,6 +1,6 @@
 # Exercise 04 - Implement load testing and secure practices
 
-## Task 1 - Implement load testing
+## Task 1 - Implement load testing (15 minutes)
 
 ### Introduction
 
@@ -22,7 +22,7 @@ In this task, you will create a load testing strategy to describe your plan and 
 Although the Team Messaging System itself does not experience heavy utilization throughout the day, the development team has asked you to consider a similar application with the following usage profile:
 
 - The majority of utilization happens during business hours, which are 8 AM until 5 PM Central time in the United States.
-- During normal business hours, the average daily load is 1000 users per hour and users interact with all system endpoints, not just a subset.
+- During normal business hours, the average daily load is 1000 users per hour and users interact with all system endpoints, not just a subset. For a load test, they would like to ensure that 30 concurrent users are able to access the site and ensure that the overall workload should take no more than 600ms per call on average. Also, no more than 10% of calls should fail under this workload.
 - There are no external APIs or automated systems which add an appreciable amount of workload to the application.
 
 1. Create a load testing strategy based on the Team Messaging System application.
@@ -37,7 +37,7 @@ Although the Team Messaging System itself does not experience heavy utilization 
 
 - [How to write a test plan for load testing](https://www.flood.io/blog/how-to-write-a-test-plan-for-load-testing)
 
-## Task 2 - Run a load test from GitHub Actions
+## Task 2 - Run a load test from GitHub Actions (75 minutes)
 
 ### Introduction
 
@@ -85,8 +85,10 @@ Now that you have demonstrated your load testing plan for the Team Messaging Sys
 - [Establish Baselines](https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/performance-test#establish-baselines)
 - [Create configurable load tests with secrets and environment variables](https://docs.microsoft.com/en-us/azure/load-testing/how-to-parameterize-load-tests)
 - [Load Testing documentation](https://docs.microsoft.com/en-us/azure/load-testing/)
+- [Video: JMeter Test Script Recorder](https://www.youtube.com/watch?v=voYj16cETAM)
+- [JMeter + POST + anti-forgery token](https://stackoverflow.com/questions/53034969/jmeter-post-anti-forgery-token)
 
-## Task 3 - Identifying bottlenecks, stress tests, and resilience testing
+## Task 3 - Identifying bottlenecks, stress tests, and resilience testing (30 minutes)
 
 ### Introduction
 
@@ -100,11 +102,11 @@ We will also want to perform a third type of testing, called resilience testing.
 
 The team at Munson's Pickles and Preserves is excited about the possibilities of automated load testing of their applications and they are interested in learning more about the types of testing we can perform in Azure to gauge application quality and resiliency.
 
-1. Review your load test results to see where there are potential bottlenecks in your application.  If needed, perform additional tests with different settings to help identity any bottlenecks.  Once you have identified one or more bottlenecks, see how you could resolve the bottleneck and show that the fix resolved the issue.
+1. Review your load test results to see where there are potential bottlenecks in your application.  If needed, perform additional tests with different settings to help identity any bottlenecks.  Once you have identified one or more bottlenecks, see how you can resolve the bottleneck and show the new performance profile after your fixes are in place.
 2. Create a new set of test scripts or parameters and run a stress test.
 3. Identify the bottlenecks and breaking points of the application under stress.
 4. Decide whether you should add stress test remediation steps as GitHub Issues.
-5. Use Azure Chaos Studio to design a Chaos experiment.
+5. Use Azure Chaos Studio to design a Chaos experiment. Note that you will need to register the `Microsoft.Chaos` provider for your subscription if you have not already. You can register this in the **Resource providers** menu item under the **Settings** menu for the subscription.
 6. After ensuring that you have a recent baseline test, run a load test.
 7. During the load test, start the Chaos experiment and note the failures. Note that there is, at present, no GitHub Action for Chaos experiments, so you will need to run this manually, outside of a GitHub Actions workflow.
 8. Prioritize the failure points arising from the Chaos experiment and build an action plan to remediate.

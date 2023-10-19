@@ -23,6 +23,7 @@ TODO
   - `az ad sp create-for-rbac --name "TechExcelUser" --role contributor --scopes /subscriptions/{subscription_id}/resourceGroups/{resource_group_name} --json-auth`. The output of this command should be the `AZURE_CREDENTIALS` secret.
 - The solution for this task is a YAML file in [the solutions folder](./Solution/Exercise-03/Task-3/deploy.yml).
 - The solution for the advanced variant of this task is a separate YAML file in [the solutions folder](./Solution/Exercise-03/Task-3/deploy-advanced.yml).
+- To enable Application Insights via the Azure portal, navigate to an App Service. Then, choose Application Insights from the Settings menu on the left-hand side. Next, select the "Turn on Application Insights" button to enable Application Insights. Finally, select "Apply" and then "Yes" to complete the process. Repeat this for the two remaining environments.
 
 ## Task 4 - Build, Push, and Deploy Changes
 
