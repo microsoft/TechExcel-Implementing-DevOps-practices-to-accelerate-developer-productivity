@@ -1,4 +1,4 @@
-# Exercise 02 - Start working in GitHub (45 minutes)
+# Exercise 02 - Start working in GitHub
 
 ## Task 1 - Set up a GitHub repository (10 minutes)
 
