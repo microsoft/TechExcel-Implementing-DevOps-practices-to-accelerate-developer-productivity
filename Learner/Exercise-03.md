@@ -1,26 +1,36 @@
-# Exercise 03 - Improve and deploy your application (?? minutes)
+# Exercise 03 - Improve and deploy your application
 
-## Task 1 - Configure Microsoft Copilot on your Dev Box (?? minutes)
+## Task 1 - Configure Microsoft Copilot on your Dev Box (15 minutes)
 
 ### Introduction
 
-TODO
+One way to accelerate developer productivity is to take advantage of generative AI solutions like GitHub Copilot. With Copilot, developers are still responsible for writing good code, but Copilot can offer suggestions on how to turn ideas into code and works well for common functions. This can let developers spend more time thinking about what they need to solve and fine-tuning suggestions to work with an existing code base.
+
+To learn more about GitHub Copilot, read the following articles:
+
+- [GitHub Copilot - Your AI pair programmer](https://github.com/features/copilot)
+- [Getting started with GitHub Copilot](https://docs.github.com/en/copilot/getting-started-with-github-copilot)
 
 ### Description
 
-TODO
+In addition to seeing how DevOps practices can improve their existing business processes, the development team at Munson's Pickles and Preserves would like to see how generative AI solutions like GitHub Copilot can help them with day-to-day development tasks.
+
+In this task, you will ensure that your Dev Box has GitHub Copilot installed and able to make recommendations for C# code.
+
+1. Ensure that you have GitHub Copilot access associated with your GitHub account.
+2. Install the GitHub Copilot extension for Visual Studio Code.
+3. Open the GitHub Copilot completions panel.
 
 ### Success Criteria
 
-TODO
+- The GitHub Copilot extension for Visual Studio Code is installed on your Dev Box.
+- You are able to open the GitHub Copilot completions panel.
+- If you open a C# script file in the web application project and enter a comment like `// Write a loop from 0 to 10 and print out the numeric value of the iterator for each loop iteration`, you receive a set of suggestions in C#.
 
 ### Learning Resources
 
-TODO
-
-### Tips
-
-TODO
+[Sign up for GitHub Copilot as a Microsoft employee](https://aka.ms/copilot)
+[Microsoft Copilot videos](https://repos.opensource.microsoft.com/orgs/MicrosoftCopilot?section=videos)
 
 ## Task 2 - Change the application (15 minutes)
 
