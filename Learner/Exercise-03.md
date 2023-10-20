@@ -20,6 +20,7 @@ In this task, you will ensure that your Dev Box has GitHub Copilot installed and
 1. Ensure that you have GitHub Copilot access associated with your GitHub account.
 2. Install the GitHub Copilot extension for Visual Studio Code.
 3. Open the GitHub Copilot completions panel.
+4. Ensure that the GitHub Copilot extension is working by entering the following comment in an existing C# code file: `// Write a loop from 0 to 10 and print out the numeric value of the iterator for each loop iteration`. Then, highlight the comment and review the suggestions.
 
 ### Success Criteria
 
