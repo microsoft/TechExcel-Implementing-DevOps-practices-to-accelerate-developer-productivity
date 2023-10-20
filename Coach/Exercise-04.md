@@ -28,6 +28,26 @@ Reinforce the importance of using existing metrics, usage patterns, and data to 
 ## Task 2 - Run a load test from GitHub Actions
 
 - A sample JMeter script is in [the solutions folder](./Solution/Exercise-04/Task-2/LoadTestScript.jmx). This script covers steps 1 and 2.
+  - The JMeter test plan includes the following components. Create them in the following order: 
+    - Thread Group to perform testing (right-click on the Test Plan and select Add -> Threads to add the Thread Group). The thread group should include 30 threads and 30 loops.
+      - HTTP Request Defaults (right-click on the Thread Group and choose Add -> Config Element). Set the protocol to https and the server name or IP to your deployed website. The included script sets the server name to a variable called `${site}`, which expects an environment variable on the PC called `webapp`. The URL for this site--or for the `webapp` environment variable--should be in the format `{yourprefix}-dev.azurewebsites.net` with no `https://` or trailing slashes.
+      - Recording Controller (Add -> Logic Controller)
+    - HTTP(S) Test Script recorder (Add -> Non-Test Elements)
+      - On the test script recorder, the default port is 8888.
+    - View Results in Table (Add -> Listener). This allows you to view test results in a table and get a quick idea of how the website is performing during a test.
+    - View Results Tree (Add -> Listener). This allows you to view individual test results and diagnose potential issues such as 400 Bad Request.
+  - The following steps allow you to perform a test recording.
+    - Start the recorder by selecting the Start button on the HTTP(S) Test Script Recorder element. The first time you do this, JMeter will generate a temporary root certificate in `C:\apache-jmeter-5.6.2\bin\` (or wherever you installed JMeter). Stop the recording by selecting the Stop button.
+    - Although you can use any browser for testing, the Firefox browser is recommended for this because you can set a manual proxy and do not need to create a Windows-wide proxy like you would for Chrome or Edge. You can set a proxy in Firefox by navigating to the options menu and then choosing Settings. Then, search for "proxy" in the settings search bar and select the Settings button for network settings. When running the test script, use a manual proxy configured to localhost on port 8888, and use it for HTTP as well as HTTPS. After setting the proxy, search for "certificate" in the settings search bar and then select the View Certificates button. From there, navigate to Authorities and choose the Import button. Inside `C:\apache-jmeter-5.6.2\bin\` (or wherever you installed JMeter), select the `ApacheJMeterTemporaryRootCA.crt` certificate and import it into Firefox.
+    - After enabling the proxy and importing the certificate, you should be able to return to JMeter and restart the test recording.
+    - During the recording, you should capture activities like viewing the page, adding a message, deleting a message, and analyzing messages.
+  - After stopping a test recording, you will have a series of test actions. You will need to capture the request verification token from the first call in order to ensure that you have a proper CSRF token for all subsequent calls.
+    - Right-click on the first recorded message in the Recording Controller element and select Add -> Post Processors -> CSS Selector Extractor.
+    - In the CSS Selector Extractor, set the following attributes:
+      - Name of created variable = `token`
+      - CSS Selector expression = `input[name=__RequestVerificationToken]`
+      - Attribute = `value` 
+    - For each subsequent call, replace the Value of the "__RequestVerificationToken" parameter with `${token}`. You will only see this parameter on POST requests, not GET requests.
 - The following instructions cover steps 3-7.
   - Create Azure Load Testing resource
     - Search for the Azure Load Testing resource on the top search bar and select the resource.
