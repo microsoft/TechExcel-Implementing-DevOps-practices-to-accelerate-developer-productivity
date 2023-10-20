@@ -13,7 +13,7 @@ In this task, you will ensure that you have a GitHub repository set up with the 
 The key tasks are as follows:
 
 1. Create a new GitHub repository in the context of your organization or account.
-2. Obtain the sample application and Bicep template from the starter GitHub repository.  (TODO:  need starter repo)
+2. Obtain the sample application and Bicep template from [the starter GitHub repository](https://github.com/microsoft/TechExcel-Implementing-DevOps-practices-to-accelerate-developer-productivity-code).
 3. Commit the files to your GitHub repository using your preferred Git client.
 
 ### Success Criteria
