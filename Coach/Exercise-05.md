@@ -1,4 +1,4 @@
-# Exercise 05 - Make things secure
+# Exercise 05 - Make things secure (45 minutes)
 
 ## Task 1 - Branching & Policies
 
@@ -56,7 +56,7 @@
 11. After it's complete, go back to "Settings" and "Code security and analysis". Then click the ellipsis (...) to "Set up". You'll see a couple of options there, "View last scan log, and "View Code Scanning alerts". Click and those just to explore. You shouldn't see much in either screen. The final option, "View CodeQL Workflow" will take you to the YAML file you created in step 9. **Note:** it will still say "Set up" since we chose the Advanced option instead of Basic.
     ![View cod scanning results](Media/CodeQLViewResults.png)
 
-## Task 3
+## Task 3 - Monitoring: Application Insights
 
 1. The App Insights Instrumentation key property is defined here under the appServiceApp resource
    ![App Insights Instrumentation Key in the .bicep code](Media/AppInsightsInstrumentationKey.png)

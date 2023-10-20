@@ -78,7 +78,7 @@ In this challenge, you will improve the security of your repository using some o
 
 - If you are stuck, check out the 'Security' tab of your repository on GitHub.
 
-## Task 03
+## Task 03 - Monitoring: Application Insights
 
 ### Introduction
 
