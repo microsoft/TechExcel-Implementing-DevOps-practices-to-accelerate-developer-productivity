@@ -82,13 +82,13 @@ In this challenge, you will improve the security of your repository using some o
 
 ### Introduction
 
-To bring our DevOps journey full circle we need to understand what is happening in our deployed environments. It is too late for us to find out about a problem, by the time our users are complaining about it. It is also imperative to know about not only the performance of the site, but also the impact positive or negative a feature has had on our users. Please take a moment to review the articles below to gain a better understanding of the importance of monitoring and Application Insights, one of the tools we have to make it easy in Azure.
+To wrap up the DevOps journey Munson's Pickles and Preservers would like to understand what is happening in the deployed environments. It is too late to find out about a problem by the time users are complaining about it. It is also imperative to know about not only the performance of the site, but also the impact positive or negative a feature has had on the users. Please take a moment to review the articles below to gain a better understanding of the importance of monitoring and Application Insights, one of the tools available in Azure to make it easy.
 
 ### Description
 
 In this challenge we will look at some of the telemetry that has already been collected by our running instance from Application Insights, injected into the Azure resources created back in our earlier Infrastructure-as-code challenge.
 
-- Review the `container-webapp-template.json` ARM template. Find where the Application Insights node was created and note how the Web App was configured to send its logs there. 
+- Review the `main.bicep` file. Find where the Application Insights node was created and note how the Web App was configured to send its logs there.
 - Create a dashboard in the Azure Portal to provide a summary of the status of our site. ([hint](https://docs.microsoft.com/en-us/azure/azure-monitor/app/overview-dashboard#application-dashboard))
 - Implement an outside in availability test for the homepage of your site ([hint](https://docs.microsoft.com/en-us/azure/azure-monitor/app/monitor-web-app-availability))
 
