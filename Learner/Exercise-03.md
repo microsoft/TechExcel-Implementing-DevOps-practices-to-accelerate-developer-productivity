@@ -17,8 +17,8 @@ In addition to seeing how DevOps practices can improve their existing business p
 
 In this task, you will ensure that your Dev Box has GitHub Copilot installed and able to make recommendations for C# code.
 
-1. Ensure that you have GitHub Copilot access associated with your GitHub account.
-2. Install the GitHub Copilot extension for Visual Studio Code.
+1. Ensure that you have GitHub Copilot access associated with your GitHub account. [Sign up for GitHub Copilot as a Microsoft employee](https://aka.ms/copilot) if you have not already.
+2. Install the GitHub Copilot extension for Visual Studio Code. Note that you must already be logged into your Microsoft Enterprise Managed User (EMU) account before installing the extension.
 3. Open the GitHub Copilot completions panel.
 4. Ensure that the GitHub Copilot extension is working by entering the following comment in an existing C# code file: `// Write a loop from 0 to 10 and print out the numeric value of the iterator for each loop iteration`. Then, highlight the comment and review the suggestions.
 
@@ -31,7 +31,8 @@ In this task, you will ensure that your Dev Box has GitHub Copilot installed and
 ### Learning Resources
 
 [Sign up for GitHub Copilot as a Microsoft employee](https://aka.ms/copilot)
-[Microsoft Copilot videos](https://repos.opensource.microsoft.com/orgs/MicrosoftCopilot?section=videos)
+[60-second video on unblocking the most common issues](https://aka.ms/gim/copilot)
+[Configure Visual Studio Code with an Enterprise Managed User account](https://repos.opensource.microsoft.com/orgs/MicrosoftCopilot?section=videos)
 
 ## Task 2 - Change the application (15 minutes)
 
