@@ -142,7 +142,7 @@ Instead of changing the environment variable for each environment that we want t
 
 ### Introduction
 
-With our Azure resources created, we have laid out the foundation for our application. Now, we must connect our source code with its destination. The first step in this journey is called Continuous integration (CI).
+With our Azure resources created, we have laid out the foundation for our application. Now, we must connect our source code with its destination. The first step in this journey is called Continuous Integration (CI).
 
 Continuous Integration is the process of merging local code changes into source control and may include steps to automatically build and test the code. Effective Continuous Integration allows developers rapidly to iterate and collaborate. It also helps ensure that newly added code does not break the current application.
 
