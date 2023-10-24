@@ -13,11 +13,11 @@ To learn more about GitHub Copilot, read the following articles:
 
 ### Description
 
-In addition to seeing how DevOps practices can improve their existing business processes, the development team at Munson's Pickles and Preserves would like to see how generative AI solutions like GitHub Copilot can help them with day-to-day development tasks.
+In addition to seeing how DevOps practices can improve their existing business processes, the development team at Munson's Pickles and Preserves would like to see how generative AI solutions - like GitHub Copilot - can help them with day-to-day development tasks.
 
-In this task, you will ensure that your Dev Box has GitHub Copilot installed and able to make recommendations for C# code.
+In this task, you will ensure that your Dev Box has GitHub Copilot installed and that GitHub Copilot is able to make recommendations for C# code.
 
-1. Ensure that you have GitHub Copilot access associated with your GitHub account. [Sign up for GitHub Copilot as a Microsoft employee](https://aka.ms/copilot) if you have not already.
+1. Ensure that you have GitHub Copilot access associated with your GitHub account. [Sign up for GitHub Copilot as a Microsoft employee](https://aka.ms/copilot) if you have not done so already.
 2. Install the GitHub Copilot extension for Visual Studio Code. Note that you must already be logged into your Microsoft Enterprise Managed User (EMU) account before installing the extension.
 3. Open the GitHub Copilot completions panel.
 4. Ensure that the GitHub Copilot extension is working by entering the following comment in an existing C# code file: `// Write a loop from 0 to 10 and print out the numeric value of the iterator for each loop iteration`. Then, highlight the comment and review the suggestions.
@@ -56,10 +56,10 @@ In this task, you will modify the application to support 250 characters instead 
 
 ### Success Criteria
 
-- You are able to run your web application successfully after making changes.
+- You are able to run your web application on your Dev Box successfully after making changes.
 - You are able to insert a message of length 250.
 - You are not able to insert a message of length 251.
-- All of your changes are now in the `main` branch for your GitHub repository.
+- All of your changes are now in the `main` branch of your GitHub repository.
 - The issue you created for this ticket is now closed and the feature branch has been deleted.
 
 ## Learning Resources
@@ -79,7 +79,7 @@ Use GitHub Copilot to assist in creating the appropriate unit tests.
 
 ### Introduction
 
-Now that we have some code, we need an environment to deploy it to! The term Infrastructure as Code (IaC) refers to using code-based templates repeatedly and consistently to create the dev, test, and prod infrastructure environments. We can automate the deployment of Azure services we need with an Azure Resource Manager (ARM) template, which we can invoke as part of a GitHub Actions workflow.
+Now that we have some code, we need an environment to deploy it to! The term Infrastructure as Code (IaC) refers to using code-based templates repeatedly and consistently to create the dev, test, and prod infrastructure environments. We can automate the deployment of Azure services we need with an Azure Resource Manager (ARM), Bicep, or other type of template, which we can invoke as part of a GitHub Actions workflow.
 
 Review the following articles:
 
@@ -98,8 +98,8 @@ We will use GitHub Actions to automate the deployment of our Azure infrastructur
 2. Review the use of the `uniqueString` function. This helps create unique names for your resources. This function is not random, but is instead a hash function based on your resource group ID, which provides a consistent but likely unique 13-character string. This function is useful to avoid naming conflicts in Azure.
 3. Review the `environment` and `location` parameters. These have default values but you are able to override them as well in order to create other resources in different environments.
 4. Create a resource group. Then, create a service principal to log into Azure. The service principal should have Contributor access to the resource group you just created. You can create this service principal with the following steps:
-   1. Create an Application registration and service principal in Microsoft Entra ID, either through the Azure portal or az cli.
-   2. Use the command `az ad sp create-for-rbac` to create a JSON output containing client details, including the client ID and client secret. Copy that JSON output.
+   - Create an Application registration and service principal in Microsoft Entra ID, either through the Azure portal or az cli.
+      - If using the command line use `az ad sp create-for-rbac` to create a JSON output containing client details, including the client ID and client secret. Copy that JSON output.
 5. Create a GitHub repository-level secret to store the service principal's credentials, calling it `AZURE_CREDENTIALS`. Create a second repository-level secret to store the name of the Azure resource group, calling this `AZURE_RG`. Create a third repository-level secret to store the name of the Azure subscription, calling it `AZURE_SUBSCRIPTION_ID`.
 6. Create a new GitHub Actions workflow called `deploy.yml`. This workflow should run on a manual trigger--that is, *not* triggered by a push or pull request.
 7. Configure the workflow to accomplish the following tasks:
