@@ -19,11 +19,13 @@ Within Microsoft Azure, Microsoft has created Microsoft Dev Box as a solution fo
 
 ## Task 01 - Deploy the necessary prerequisites required for a Microsoft Dev Box
 
-Before even standing up some development boxes for the developers and Munson's Pickles and Preservers to use, they have some prerequisite tasks that need to be done in order to ensure that developers have various projects and network connections in place and can access the required resources. In this first task you will walk through some of those base configurations that are needed to stand up a Dev Box in Azure. This includes a dev center where all the projects will live. the projects where you can add the virtual machines configured specifically for that project, as well as the network these development virtual machines will be attached to. This ensures users can login with the Azure AD account as well as that they are able to access other resources on the network.
+Before standing up Dev Boxes for the developers at Munson's Pickles and Preservers to use, they have some prerequisite tasks that need to be done in order to ensure that developers have the right permissions and network access in place and can access the resources required for their. 
+
+In this first task you will walk through some of those base configurations that are needed to stand up a Microsoft Dev Box in Azure. This includes a Dev Center where all the projects will live. The projects where you can add the virtual machines configured specifically for that project, as well as the network these development virtual machines will be attached to. This ensures users can login with the Azure AD account as well as that they are able to access other resources on the network.
 
 ### Description
 
-Microsoft Dev Box requires the proper infrastructure and resources to be deployed in Azure before you can start deploying virtual machines to users. In this exercise, you'll prep your Azure environment for deploying Dev Boxes.
+Microsoft Dev Box requires the proper infrastructure and resources to be deployed in Azure before you can start deploying  machines for users. In this exercise, you'll prep your Azure environment for deploying Dev Boxes.
 
 ### Success Criteria
 
@@ -39,20 +41,22 @@ Microsoft Dev Box requires the proper infrastructure and resources to be deploye
 
 ### Tips
 
-- [Ste-by-step to create a dev center and project](https://learn.microsoft.com/en-us/azure/dev-box/quickstart-configure-dev-box-service?tabs=AzureADJoin#1-create-a-dev-center)
-- [Step-by-step to create a Dev box network and network connection](https://learn.microsoft.com/en-us/azure/dev-box/quickstart-configure-dev-box-service?tabs=AzureADJoin#2-configure-a-network-connection)
-- [If you want to use an ARM template, configure a dev box by using an ARM template](https://learn.microsoft.com/en-us/azure/dev-box/quickstart-configure-dev-box-arm-template)
+- [Step-by-step to create a dev center and project](https://learn.microsoft.com/en-us/azure/dev-box/quickstart-configure-dev-box-service?tabs=AzureADJoin#1-create-a-dev-center)
+- [Step-by-step to create a Dev Box network and network connection](https://learn.microsoft.com/en-us/azure/dev-box/quickstart-configure-dev-box-service?tabs=AzureADJoin#2-configure-a-network-connection)
+- [If you want to use an ARM template, configure a Dev Box by using an ARM template](https://learn.microsoft.com/en-us/azure/dev-box/quickstart-configure-dev-box-arm-template)
 
-### Other Dev Box options not covered in this lab
+### Related features not covered in this lab
 
-- [Catalogs from GitHub or Azure DevOps in Microsoft Dev Box](https://learn.microsoft.com/azure/deployment-environments/how-to-configure-catalog)
-- [Environment definitions for Microsoft Dev Box Projects](https://learn.microsoft.com/en-us/azure/deployment-environments/configure-environment-definition)
+- [Template Catalogs for Azure Deployment Environments](https://learn.microsoft.com/azure/deployment-environments/how-to-configure-catalog)
+- [Environment definitions for Dev Center Projects](https://learn.microsoft.com/en-us/azure/deployment-environments/configure-environment-definition)
 
 ## Task 02 - Setup an image
 
 ### Description
 
-Typically, when a developer needs to have an environment configured for their development tasks, they need software deployed, specific versions of tools and source code, any other configurations for their development tasks. This can be a time consuming process when onboarding a new developer or switching to a new development project. If developers are working on multiple projects, they may even have challenges with those different projects requiring different versions of the same software. In this task, you'll setup an image to be used for Dev Box. This enables most of these things to be preconfigured so as soon as a user is onboarded or needs to work on a different project, an environment can be quickly spun up for them from an image.
+Typically, when a developer needs to have an environment configured for their development tasks, they need software deployed, specific versions of tools and source code, any other configurations for their development tasks. This can be a time-consuming process, particularly when onboarding a new developer or switching to a new development project. 
+
+If developers are working on multiple projects, they may even have challenges with those different projects requiring different versions of the same software. In this task, you'll setup an image to be used for Dev Box. This enables most of these things to be preconfigured so as soon as a user is onboarded or needs to work on a different project, an environment can be quickly spun up for them from an image.
 
 ### Success Criteria
 
@@ -127,6 +131,6 @@ Now that you have the custom image with all your software installed, developers 
 ### Tips
 
 - To access the Dev Portal for logging in as a user visit: [https://devportal.microsoft.com/](https://devportal.microsoft.com/).
-- Ensure you assign the appropriate RBAC roles for the users who to access the dev portal to login to a virtual machine.
+- Ensure you assign the [appropriate RBAC roles](https://learn.microsoft.com/en-us/azure/dev-box/how-to-dev-box-user) for the users who to access the dev portal to login to a virtual machine.
 - The first time you need a virtual machine, you need to first create it. It can take a little bit to create the VM the first time.
-- **Note**: Docker for desktop doesn't like the custom image and may need to be uninstalled/reinstalled after creating your Dev Box.
+- **Note**: It's possible that Docker for Desktop causes issues following the creation of your Dev Box due to the custom image. To resolve, it may need to be uninstalled/reinstalled once your Dev Box is created.
