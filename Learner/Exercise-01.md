@@ -1,5 +1,15 @@
 # Exercise 01 - Set up development environment (120 minutes)
 
+## Prerequisites
+
+During the labs in the workshop, you will need:
+
+- An AAD tenant where you are a global admin. and an Azure subscription in that same tenant. 
+- M365 E5 licenses (or a trial for these licenses configured) in that same tenant .
+- **[MCAPS non-prod subscriptions](https://dev.azure.com/OneCommercial/NoCode/_wiki/wikis/NoCode.wiki/12/Hybrid-Subscription) are the most convenient way for you to meet all these pre-requites, and the lab activities assume that you have configured an external subscription via https://aka.ms/MCAPSNewAzureSub.**  
+
+## Introduction
+
 Munson's Pickles and Preserves has a large number of developers on their team, working on a variety of projects. One of those projects is the Team Messaging System. A challenge that Munson's Pickles and Preservers has with development is getting developers machines configured properly in a timely manner when they need to work on this projects. Developers occasionally will also be working on two projects simultaneously that require different configurations or various version for the same software packages, making it challenging to keep their development computer consistent when working on the two project. In the past, MPP has also had issues with one developers computer being configured slightly different that another developers so the code they are developing behaved different for different developers. Within the Microsoft cloud, Microsoft has created Microsoft Dev Box as a solution for addressing this issue. It allows an organization to create a virtual desktop environment geared specifically at developers so you can ensure that your developers are working from machines configured the same way with the same version of software deployed to them. In these next few tasks, you'll configure a Microsoft Dev Box environment.
 
 ## Task 01 - Deploy the necessary prerequisites required for a Microsoft Dev Box
