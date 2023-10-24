@@ -4,7 +4,7 @@
 
 ### Introduction
 
-When some people think of load testing, the first thought that comes to mind is pointing a tool at your site, cranking the load to the max, and seeing what happens.  While that might be exciting at the moment, it’s critical to take a step back and develop a load testing strategy that is tailored to the application. This means breaking down the architecture, internal and external dependencies, high availability design, scaling, and the data tier.  Having a plan not only helps you prepare while you are testing the application but it also provides context as to why and how you are testing the application for anyone in the future.  
+When some people think of load testing, the first thought that comes to mind is pointing a tool at your site, cranking the load to the max, and seeing what happens.  While that might be exciting at the moment, it’s critical to take a step back and develop a load testing strategy that is tailored to the application. This means breaking down the architecture, internal and external dependencies, high availability design, scaling, and the data tier.  Having a plan not only helps you prepare while you are testing the application, but it also provides context as to why and how you are testing the application for anyone in the future.  
 
 ### Description
 
@@ -57,7 +57,7 @@ Now that you have demonstrated your load testing plan for the Team Messaging Sys
 
 1. Using the JMeter GUI, create a load testing script that targets each of the application endpoints.
 2. Execute the load test using the JMeter GUI against your endpoints and use the Azure portal to confirm the App Service is getting the traffic.
-3. Create a Load Testing service in Azure.
+3. Create an Azure Load Testing resource.
 4. Create a load test in the Load Testing service that accepts the website URL as an environment variable and passes that value to your load testing script.
 5. Run your load test multiple times using a typical user load and establish a performance baseline.
 6. Review the test results, identify the bottlenecks (CPU, memory, resource limits), and compile a list of insights.
