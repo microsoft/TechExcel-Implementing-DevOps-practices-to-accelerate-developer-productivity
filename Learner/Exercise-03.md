@@ -99,7 +99,23 @@ We will use GitHub Actions to automate the deployment of our Azure infrastructur
 3. Review the `environment` and `location` parameters. These have default values but you are able to override them as well in order to create other resources in different environments.
 4. Create a resource group. Then, create a service principal to log into Azure. The service principal should have Contributor access to the resource group you just created. You can create this service principal with the following steps:
    - Create an Application registration and service principal in Microsoft Entra ID, either through the Azure portal or az cli.
-      - If using the command line use `az ad sp create-for-rbac` to create a JSON output containing client details, including the client ID and client secret. Copy that JSON output.
+      - If using the command line use `az ad sp create-for-rbac` to create a JSON output containing client details, including the client ID and client secret. Copy that JSON output. If you are not using the command line, ensure that you can generate client details in a format like the following:
+
+        ```json
+        {
+            "clientId": "e51a31f4-b7ce-4b59-ab2f-b9a2eb8c3257",
+            "clientSecret": "ai28Q~uk6S-1pXPTL6sMtW3ESpyz3cOU~JCMRczZ",
+            "subscriptionId": "{subscription_id}",
+            "tenantId": "{tenant_id}",
+            "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+            "resourceManagerEndpointUrl": "https://management.azure.com/",
+            "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+            "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+            "galleryEndpointUrl": "https://gallery.azure.com/",
+            "managementEndpointUrl": "https://management.core.windows.net/"
+        }
+        ```
+
 5. Create a GitHub repository-level secret to store the service principal's credentials, calling it `AZURE_CREDENTIALS`. Create a second repository-level secret to store the name of the Azure resource group, calling this `AZURE_RG`. Create a third repository-level secret to store the name of the Azure subscription, calling it `AZURE_SUBSCRIPTION_ID`.
 6. Create a new GitHub Actions workflow called `deploy.yml`. This workflow should run on a manual trigger--that is, *not* triggered by a push or pull request.
 7. Configure the workflow to accomplish the following tasks:
