@@ -92,7 +92,7 @@ In this task, you will deploy out new Azure infrastructure for the Munson's Pick
 
 We will use GitHub Actions to automate the deployment of our Azure infrastructure. For our application, we will deploy 3 environments: `dev`, `test` and `prod`. Each environment will have its own Web App. For the sake of this proof of concept, however, all of our environments will share a single Resource Group, App Service Plan, Application Insights instance, and Azure Container Registry.
 
-**NOTE:** In a real deployment, you likely would not share these resources between environments.
+**NOTE:** We have laid out the resources in a single resource group for this training for two reasons. The first reason is to facilitate ease of cleanup at the end, as you will only need to delete one resource group. The other reason is to reduce the cost of training, as you will create only one App Service Plan and one Application Insights instance. In a real scenario, you would likely create separate resources for each environment, either in separate resource groups on the same subscription or separate resource groups in different subscriptions.
 
 1. Review the Bicep template. Notice how it includes the configuration settings for an App Service Plan, a Web App, Application Insights, and Azure Container Registry into your resource group.
 2. Review the use of the `uniqueString` function. This helps create unique names for your resources. This function is not random, but is instead a hash function based on your resource group ID, which provides a consistent but likely unique 13-character string. This function is useful to avoid naming conflicts in Azure.
