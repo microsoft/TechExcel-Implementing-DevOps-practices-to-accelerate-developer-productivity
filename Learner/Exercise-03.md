@@ -103,8 +103,8 @@ We will use GitHub Actions to automate the deployment of our Azure infrastructur
 
         ```json
         {
-            "clientId": "e51a31f4-b7ce-4b59-ab2f-b9a2eb8c3257",
-            "clientSecret": "ai28Q~uk6S-1pXPTL6sMtW3ESpyz3cOU~JCMRczZ",
+            "clientId": "{client_id}",
+            "clientSecret": "{some string value}",
             "subscriptionId": "{subscription_id}",
             "tenantId": "{tenant_id}",
             "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
