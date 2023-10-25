@@ -24,8 +24,8 @@ The key tasks are as follows:
 ### Learning Resources
 
 - Cloning a repository via the [command line](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) or [GitHub Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/cloning-a-repository-from-github-to-github-desktop)
-- For those using GitHub Desktop, here is documentation on [committing](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/committing-and-reviewing-changes-to-your-project) and [pushing](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/pushing-changes-to-github) changes to a repository.
-- If working with the command line, check out these articles on [committing](https://docs.github.com/en/github/committing-changes-to-your-project/creating-and-editing-commits) and [pushing](https://docs.github.com/en/github/using-git/pushing-commits-to-a-remote-repository) changes.
+   - For those using GitHub Desktop, here is documentation on [committing](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/committing-and-reviewing-changes-to-your-project) and [pushing](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/pushing-changes-to-github) changes to a repository.
+   - If working with the command line, check out these articles on [committing](https://docs.github.com/en/github/committing-changes-to-your-project/creating-and-editing-commits) and [pushing](https://docs.github.com/en/github/using-git/pushing-commits-to-a-remote-repository) changes.
 - Additionally, you may need to pull other people's changes into your local repository to stay in sync--see documentation for [command line](https://docs.github.com/en/github/using-git/getting-changes-from-a-remote-repository) and [GitHub Desktop](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github).
 
 ### Tips
@@ -90,7 +90,7 @@ Automation is a critical part of an effective DevOps process, incorporating elem
 
 Workflows are broken down into jobs that contain the automation steps to complete these jobs. These steps could be a simple CLI command or a pre-defined piece of automation in the form of a GitHub Action from GitHub's extensive Marketplace.
 
-Jobs can run on Linux, Mac OS, or Windows. They can run in the cloud on a hosted runner or run on your own machines through a self-hosted runner. We will use hosted runners for this training but your requirements after today may include the need for self-hosting or a mix of both.
+Jobs can run on Linux, macOS, or Windows. They can run in the cloud on a hosted runner or run on your own machines through a self-hosted runner. We will use hosted runners for this training but your requirements after today may include the need for self-hosting or a mix of both.
 
 Jobs can run sequentially or in parallel. Sequential jobs provide the ability to define your workflow sequences. An example of this is a sequence that includes building an application, running tests against that application, and then deploying the application artifacts to a remote server for hosting. By contrast, parallel jobs allow the ability to scale out sections of your workflow. For example, you could build your application on x64 at the same time as ARM or test the application on Chrome at the same time as Firefox.
 
@@ -103,7 +103,8 @@ The IT team at Munson's Pickles and Preserves would like to see how GitHub Actio
 1. Create a GitHub workflow in a `.github/workflows` directory and name it `first-workflow.yml`. Include a trigger to execute this workflow manually (that is, *not* triggered by an automated action such as a push into a branch or pull request).
 2. Add a job called `job1` to the workflow. The job should include two steps. Each step will be a simple CLI command to echo out the phrases "Step 1 complete!" and "Step 2 complete!" respectively.
 3. Manually trigger the workflow you created. Check the log file for the workflow run and ensure that your job succeeded, emitting the echo statements as expected.
-4. Add a second job to this workflow and call it `job2`. In this job, add a single step. This step should call a GitHub Action from the GitHub Marketplace. Find the "Cowsays" action in the marketplace and configure this action to emit the text "Ready for prod--ship it!" in magenta font color. Note that, when you run this job, the log output may print in some other color instead of magenta.
+4. Add a second job to this workflow and call it `job2`. In this job, add a single step. This step should call a GitHub Action from the GitHub Marketplace. Find the "Cowsays" action in the marketplace and configure this action to emit the text "Ready for prod--ship it!" in magenta font color. 
+   -  *Note* When you run this job, the log output may print in some other color instead of magenta.
 5. Execute your workflow again, ensuring that both jobs run as expected and that the two jobs run in parallel.
 6. Modify `first-workflow.yml` to ensure that `job2` does not run until `job1` completes.
 7. Execute the workflow again to test the sequence.
