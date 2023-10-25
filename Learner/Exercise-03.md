@@ -1,4 +1,4 @@
-# Exercise 03 - Improve and deploy your application
+# Exercise 03 - Improve and deploy your application (90 minutes)
 
 ## Task 1 - Configure Microsoft Copilot on your Dev Box (15 minutes)
 

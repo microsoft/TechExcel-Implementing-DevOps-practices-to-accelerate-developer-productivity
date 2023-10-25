@@ -1,4 +1,4 @@
-# Exercise 04 - Implement load testing and secure practices
+# Exercise 04 - Implement load testing and secure practices (120 minutes)
 
 ## Task 1 - Implement load testing (15 minutes)
 
