@@ -4,22 +4,22 @@
 
 During the labs in the workshop, you will need:
 
-- An AAD tenant where you are a global admin. and an Azure subscription in that same tenant. 
-- M365 E5 licenses (or a trial for these licenses configured) in that same tenant .
+- An AAD tenant where you are a global admin. and an Azure subscription in that same tenant.
+- M365 E5 licenses (or a trial for these licenses configured) in that same tenant.
 
 **[MCAPS non-prod subscriptions](https://dev.azure.com/OneCommercial/NoCode/_wiki/wikis/NoCode.wiki/12/Hybrid-Subscription) are the most convenient way for you to meet all these pre-requites**, and the lab activities assume that you have configured an external subscription via [https://aka.ms/MCAPSNewAzureSub](https://aka.ms/MCAPSNewAzureSub).
 
 ## Introduction
 
-Munson's Pickles and Preserves has a large number of developers on their team, working on a variety of projects. One of those projects is the Team Messaging System. A challenge that Munson's Pickles and Preservers has with development is getting developers machines configured properly in a timely manner when they need to work on these projects. 
+Munson's Pickles and Preserves has a large number of developers on their team, working on a variety of projects. One of those projects is the Team Messaging System. A challenge that Munson's Pickles and Preservers has with development is getting developers machines configured properly in a timely manner when they need to work on these projects.
 
-Developers occasionally will also be working on two projects simultaneously that require different configurations or various version for the same software packages, making it challenging to keep their development computer consistent when working on the two projects. In the past, MPP has also had issues with one developer’s computer being configured slightly differently that another developer’s so the code they were developing behaved differently in different circumstances. 
+Developers occasionally will also be working on two projects simultaneously that require different configurations or various version for the same software packages, making it challenging to keep their development computer consistent when working on the two projects. In the past, MPP has also had issues with one developer’s computer being configured slightly differently that another developer’s so the code they were developing behaved differently in different circumstances.
 
 Within Microsoft Azure, Microsoft has created Microsoft Dev Box as a solution for addressing this issue. It allows an organization to create a virtual desktop environment geared specifically at developers. This allows organizations to ensure that developers are working from machines configured the same way with the same version of software deployed to them. In these next few tasks, you'll configure a Microsoft Dev Box environment.
 
-## Task 01 - Deploy the necessary prerequisites required for a Microsoft Dev Box
+## Task 01 - Deploy the necessary prerequisites required for a Microsoft Dev Box (20 minutes)
 
-Before standing up Dev Boxes for the developers at Munson's Pickles and Preservers to use, they have some prerequisite tasks that need to be done in order to ensure that developers have the right permissions and network access in place and can access the resources required for their. 
+Before standing up Dev Boxes for the developers at Munson's Pickles and Preservers to use, there are certain prerequisite tasks that need to be done in order to ensure that you have the right permissions and network access in place and can access the resources required for the rest of these exercises.
 
 In this first task you will walk through some of those base configurations that are needed to stand up a Microsoft Dev Box in Azure. This includes a Dev Center where all the projects will live. The projects where you can add the virtual machines configured specifically for that project, as well as the network these development virtual machines will be attached to. This ensures users can login with the Azure AD account as well as that they are able to access other resources on the network.
 
@@ -50,44 +50,48 @@ Microsoft Dev Box requires the proper infrastructure and resources to be deploye
 - [Template Catalogs for Azure Deployment Environments](https://learn.microsoft.com/azure/deployment-environments/how-to-configure-catalog)
 - [Environment definitions for Dev Center Projects](https://learn.microsoft.com/en-us/azure/deployment-environments/configure-environment-definition)
 
-## Task 02 - Setup an image
+## Task 02 - Setup an image (90 minutes)
 
 ### Description
 
-Typically, when a developer needs to have an environment configured for their development tasks, they need software deployed, specific versions of tools and source code, any other configurations for their development tasks. This can be a time-consuming process, particularly when onboarding a new developer or switching to a new development project. 
+Typically, when a developer needs to have an environment configured for their development tasks, they need software deployed, specific versions of tools and source code, any other configurations for their development tasks. This can be a time-consuming process, particularly when onboarding a new developer or switching to a new development project.
 
 If developers are working on multiple projects, they may even have challenges with those different projects requiring different versions of the same software. In this task, you'll setup an image to be used for Dev Box. This enables most of these things to be preconfigured so as soon as a user is onboarded or needs to work on a different project, an environment can be quickly spun up for them from an image.
 
-### Success Criteria
-
-- Create a compute gallery & add it to the Dev center
-- Create a custom image using Windows 11 Enterprise, version 22H2 - x64 Gen2
-  - Note: Make sure you select enterprise and not pro. Pro is not supported for Dev Box.
-  - Must include the following software
-    - Docker (without WSL): [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/)
+1. Create a compute gallery & add it to the Dev center
+2. Create a custom image using Windows 11 Enterprise, version 22H2 - x64 Gen2
+   - Note: Make sure you select enterprise and not pro. Pro is not supported for Dev Box.
+3. Include the following software on the custom image:
+   - Docker (without WSL): [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/)
       - **Note:** Make sure to UNCHECK to use WSL during installation. This will cause issue with docker
-    - Visual Studio Code (System Installer): [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+   - Visual Studio Code (System Installer): [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
       - Make sure this finishes before installing Git so you can set it as the default editor
-    - Java (for JMeter): [https://www.java.com/en/download/](https://www.java.com/en/download/)
-    - Apache JMeter: [https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip](https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip)
+   - Java (for JMeter): [https://www.java.com/en/download/](https://www.java.com/en/download/)
+   - Apache JMeter: [https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip](https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip)
       - Extract the apache-jmeter-5.6.2 folder to C:\
-    - Azure Storage Explorer (Install for all users): [https://azure.microsoft.com/products/storage/storage-explorer/](https://azure.microsoft.com/products/storage/storage-explorer/)
-    - Git bash: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+   - Azure Storage Explorer (Install for all users): [https://azure.microsoft.com/products/storage/storage-explorer/](https://azure.microsoft.com/products/storage/storage-explorer/)
+   - Git bash: [https://git-scm.com/download/win](https://git-scm.com/download/win)
       - 64bit git for Windows Setup
       - You may want to set the default editor to VSCode, keep the defaults for everything else.
-    - .NET SDK 6.0 LTS: [https://dotnet.microsoft.com/download/visual-studio-sdks](https://dotnet.microsoft.com/download/visual-studio-sdks)
+   - .NET SDK 6.0 LTS: [https://dotnet.microsoft.com/download/visual-studio-sdks](https://dotnet.microsoft.com/download/visual-studio-sdks)
       - .NET 6.0 x64 Visual Studio 2022 SDK
-  - You should make sure you reboot at this point in time and Docker is running before doing the sysprep
-  - **Important:** At this point in time, take a snapshot of the OS disk on your VM so you can make updates to it later if needed. Once you sysprep a VM you can't boot it back up again to make changes.
-  - Sysprep
-    - Delete C:\Windows\Panther and empty the recycle bin
-    - In the command prompt, CD to C:\Windows\System32\SysPrep and run ```sysprep.exe /oobe /generalize /shutdown```
-- Create the new image
-  - For the VM image definition, create a new one with the name "DevBoxProject", leave everything else the default
-  - VM version number can be 1.0.0
-  - Default storage SKU: Premium SD LRS
-  - Review + create --> Create
-  - It can take several minutes for the image to be created.
+   - Firefox: [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/). Firefox is useful because it allows you to create a manual proxy rather than using Windows defaults, as Chrome and Edge require. This will be helpful in Exercise 4.
+4. Reboot after installing all of the software and ensure that Docker is running before performing a sysprep.
+   - **Important:** At this point in time, take a snapshot of the OS disk on your VM so you can make updates to it later if needed. Once you sysprep a VM you can't boot it back up again to make changes.
+5. Perform sysprep. To do so:
+   - Delete C:\Windows\Panther and empty the recycle bin
+   - In the command prompt, CD to C:\Windows\System32\SysPrep and run `sysprep.exe /oobe /generalize /shutdown`
+6. Create the new image
+   - For the VM image definition, create a new one with the name "DevBoxProject" and leave everything else as default
+   - VM version number can be 1.0.0
+   - Default storage SKU: Premium SD LRS
+   - Review + create --> Create
+   - It can take several minutes for the image to be created.
+
+### Success Criteria
+
+- You have created a compute gallery and added it to the Dev center.
+- You have created a custom image with all relevant software installed.
 
 ### Learning Resources
 
@@ -108,7 +112,7 @@ If developers are working on multiple projects, they may even have challenges wi
     4. Create a new snapshot
     5. Run sysprep again.
 
-## Task 03 - Deploy a Microsoft Dev Box
+## Task 03 - Deploy a Microsoft Dev Box (10 minutes)
 
 ### Description
 

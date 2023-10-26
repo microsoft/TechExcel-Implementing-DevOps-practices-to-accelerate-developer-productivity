@@ -1,6 +1,6 @@
-# Exercise 05 - Make things secure
+# Exercise 05 - Make things secure (60 minutes)
 
-## Task 01 - Branching & Policies
+## Task 01 - Branching & Policies (20 minutes)
 
 ### Introduction
 
@@ -8,14 +8,14 @@ In the previous exercises, we successfully implemented an end-to-end CI/CD pipel
 
 With GitHub, Munson's Pickles and Preserves can solve these challenges using a practice called branching. Some may refer to this as the [GitHub flow](https://guides.github.com/introduction/flow/). When a developer wants to make a change, add a feature, or fix a bug, the developer begins by creating a new 'branch' or copy of the main codebase. Then, the developer makes changes and commits them. A pull request is created to merge these changes back into the main branch. This pull request may or may not involve some testing, discussion and approval. Finally, changes are merged back into the main codebase, and the branch can be deleted.
 
-In this challenge, you will practice this flow. Additionally, GitHub offers a feature for explicitly protecting against changes directly to the main branch. These are called branch protection rules, and you will start by implementing one.
-
 ### Description
 
-- Create a branch protection rule which prevents developers from committing changes to the main branch in the repository.
-- Create a feature branch, make a small change to the code (i.e.,`/Application/src/RazorPagesTestSample/Pages/Index.cshtml`), and sync this branch with the GitHub repository.
-- Define a code owner for the `/Application` directory. Your branch policy should require a review from the code owner.
-- Create and complete a Pull Request, merging your code change into the protected branch.
+In this task, you will practice the GitHub flow. Additionally, GitHub offers a feature for explicitly protecting against changes directly to the main branch. These are called branch protection rules, and you will start by implementing one.
+
+1. Create a branch protection rule which prevents developers from committing changes to the main branch in the repository.
+2. Create a feature branch, make a small change to the code (i.e.,`/Application/src/RazorPagesTestSample/Pages/Index.cshtml`), and sync this branch with the GitHub repository.
+3. Define a code owner for the `/Application` directory. Your branch policy should require a review from the code owner.
+4. Create and complete a Pull Request, merging your code change into the protected branch.
 
 ### Success Criteria
 
@@ -44,7 +44,7 @@ In this challenge, you will practice this flow. Additionally, GitHub offers a fe
 - If using the git command line interface, you can find a number of sample git commands that are useful for branching [here](https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac). (Make sure to focus on the 'git' commands, rather than 'gitflow'.)
 - If using the git command line interface, try adding '--help' after a command to get helpful information about arguments and usage.
 
-## Task 02 - Security
+## Task 02 - Security (20 minutes)
 
 ### Introduction
 
@@ -52,19 +52,19 @@ Munson's Pickles and Preserves Teams Messaging System is up and running! They ev
 
 One good DevOps practice is to enable protections against code-level vulnerabilities, and GitHub provides a number of useful features in this area. First, there are Issues, which allow developers or users to open 'tickets' indicating bugs to be fixed or potential vulnerabilities. If your organization prefers security flaws to be reported in a location other than GitHub, you have the option to provide a custom Security policy which describes the process for reporting.
 
-In addition to these manual processes, GitHub also provides automated tools for scanning code for common errors. In this challenge, you will utilize the built in Dependabot which provides alerts if your repository contains libraries, packages, or external dependencies with known vulnerabilities. You will also set up a workflow with CodeQL which can scan your source code for common coding errors or basic security flaws. This will help to ensure that Munson's Pickles and Preservers contains code without any known vulnerabilities.
+In addition to these manual processes, GitHub also provides automated tools for scanning code for common errors. In this task, you will utilize the built in Dependabot which provides alerts if your repository contains libraries, packages, or external dependencies with known vulnerabilities. You will also set up a workflow with CodeQL which can scan your source code for common coding errors or basic security flaws. This will help to ensure that Munson's Pickles and Preservers contains code without any known vulnerabilities.
 
 ### Description
 
-In this challenge, you will improve the security of your repository using some of GitHub's built-in tools.
+In this task, you will improve the security of your repository using some of GitHub's built-in tools.
 
-- Find the repository's Security policy. If there is an existing policy, make an edit and merge your change back into the main branch. Otherwise, go ahead and create a policy using the template provided. GitHub Security policies are Markdown documents that indicate the preferred way to report security vulnerabilities for the repository.
-- Enable Dependabot alerts for the repository. Dependabot is an automated tool that creates a pull request when any dependencies in the code base has a known vulnerability.
-- Finally, set up and run a Code scanning workflow for the repository using GitHub's 'CodeQL Analysis.' This workflow can run either on each pull request or on a schedule, and it checks your code for common vulnerabilities or errors.
+1. Find the repository's Security policy. If there is an existing policy, make an edit and merge your change back into the main branch. Otherwise, go ahead and create a policy using the template provided. GitHub Security policies are Markdown documents that indicate the preferred way to report security vulnerabilities for the repository.
+2. Enable Dependabot alerts for the repository. Dependabot is an automated tool that creates a pull request when any dependencies in the code base has a known vulnerability.
+3. Finally, set up and run a Code scanning workflow for the repository using GitHub's 'CodeQL Analysis.' This workflow can run either on each pull request or on a schedule, and it checks your code for common vulnerabilities or errors.
 
 ### Success Criteria
 
-- In GitHub, you should be able to view the 'closed' pull request which either created or updated the Security policy (SECURITY.md file). 
+- In GitHub, you should be able to view the 'closed' pull request which either created or updated the Security policy (SECURITY.md file).
 - Additionally, you should be able to view a new 'open' pull request created by Dependabot requesting an update of a dependency.
 - Finally, you should be able to view the results of the CodeQL Analysis in the Security tab.
 
@@ -78,7 +78,7 @@ In this challenge, you will improve the security of your repository using some o
 
 - If you are stuck, check out the 'Security' tab of your repository on GitHub.
 
-## Task 03 - Monitoring: Application Insights
+## Task 03 - Monitoring: Application Insights (20 minutes)
 
 ### Introduction
 
@@ -86,11 +86,11 @@ To wrap up the DevOps journey Munson's Pickles and Preservers would like to unde
 
 ### Description
 
-In this challenge we will look at some of the telemetry that has already been collected by our running instance from Application Insights, injected into the Azure resources created back in our earlier Infrastructure-as-code challenge.
+In this task we will look at some of the telemetry that has already been collected by our running instance from Application Insights, injected into the Azure resources created back in our earlier Infrastructure-as-code challenge.
 
-- Review the `main.bicep` file. Find where the Application Insights node was created and note how the Web App was configured to send its logs there.
-- Create a dashboard in the Azure Portal to provide a summary of the status of our site. ([hint](https://docs.microsoft.com/en-us/azure/azure-monitor/app/overview-dashboard#application-dashboard))
-- Implement an outside in availability test for the homepage of your site ([hint](https://docs.microsoft.com/en-us/azure/azure-monitor/app/monitor-web-app-availability))
+1. Review the `main.bicep` file. Find where the Application Insights node was created and note how the Web App was configured to send its logs there.
+2. Create a dashboard in the Azure Portal to provide a summary of the status of our site. ([hint](https://docs.microsoft.com/en-us/azure/azure-monitor/app/overview-dashboard#application-dashboard))
+3. Implement an outside-in availability test for the homepage of your site ([hint](https://docs.microsoft.com/en-us/azure/azure-monitor/app/monitor-web-app-availability))
 
 ### Success Criteria
 
@@ -101,5 +101,3 @@ In this challenge we will look at some of the telemetry that has already been co
 
 - [What is Monitoring?](https://docs.microsoft.com/en-us/azure/devops/learn/what-is-monitoring)
 - [What is Application Insights?](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
-
-### Tips
