@@ -28,9 +28,13 @@ Reinforce the importance of using existing metrics, usage patterns, and data to 
 ## Task 2 - Run a load test from GitHub Actions
 
 - A sample JMeter script is in [the solutions folder](./Solution/Exercise-04/Task-2/LoadTestScript.jmx). This script covers steps 1 and 2.
-  - The JMeter test plan includes the following components. Create them in the following order: 
+  - Before creating or running the script, create an environment variable called `webapp` on the Dev Box. Its value should be the URL for your site, in the format `{yourprefix}-dev.azurewebsites.net` with no `https://` or trailing slashes. The following command line operation provides an example of how to create the environment variable:
+
+    `setx webapp {yourprefix}-dev.azurewebsites.net`
+
+  - The JMeter test plan includes the following components. Create them in the following order:
     - Thread Group to perform testing (right-click on the Test Plan and select Add -> Threads to add the Thread Group). The thread group should include 30 threads and 30 loops.
-      - HTTP Request Defaults (right-click on the Thread Group and choose Add -> Config Element). Set the protocol to https and the server name or IP to your deployed website. The included script sets the server name to a variable called `${site}`, which expects an environment variable on the PC called `webapp`. The URL for this site--or for the `webapp` environment variable--should be in the format `{yourprefix}-dev.azurewebsites.net` with no `https://` or trailing slashes.
+      - HTTP Request Defaults (right-click on the Thread Group and choose Add -> Config Element). Set the protocol to https and the server name or IP to your deployed website. The included script sets the server name to a variable called `${site}`, which uses the environment variable on the PC called `webapp`.
       - Recording Controller (Add -> Logic Controller)
     - HTTP(S) Test Script recorder (Add -> Non-Test Elements)
       - On the test script recorder, the default port is 8888.
@@ -46,7 +50,7 @@ Reinforce the importance of using existing metrics, usage patterns, and data to 
     - In the CSS Selector Extractor, set the following attributes:
       - Name of created variable = `token`
       - CSS Selector expression = `input[name=__RequestVerificationToken]`
-      - Attribute = `value` 
+      - Attribute = `value`
     - For each subsequent call, replace the Value of the "__RequestVerificationToken" parameter with `${token}`. You will only see this parameter on POST requests, not GET requests.
 - The following instructions cover steps 3-7.
   - Create Azure Load Testing resource
