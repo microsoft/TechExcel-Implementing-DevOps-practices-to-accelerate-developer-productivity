@@ -62,20 +62,29 @@ If developers are working on multiple projects, they may even have challenges wi
 2. Create a custom image using Windows 11 Enterprise, version 22H2 - x64 Gen2
    - Note: Make sure you select enterprise and not pro. Pro is not supported for Dev Box.
 3. Include the following software on the custom image:
-   - Docker (without WSL): [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/)
-      - **Note:** Make sure to UNCHECK to use WSL during installation. This will cause issue with docker
-   - Visual Studio Code (System Installer): [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
-      - Make sure this finishes before installing Git so you can set it as the default editor
-   - Java (for JMeter): [https://www.java.com/en/download/](https://www.java.com/en/download/)
-   - Apache JMeter: [https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip](https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip)
-      - Extract the apache-jmeter-5.6.2 folder to C:\
-   - Azure Storage Explorer (Install for all users): [https://azure.microsoft.com/products/storage/storage-explorer/](https://azure.microsoft.com/products/storage/storage-explorer/)
-   - Git bash: [https://git-scm.com/download/win](https://git-scm.com/download/win)
-      - 64bit git for Windows Setup
-      - You may want to set the default editor to VSCode, keep the defaults for everything else.
-   - .NET SDK 6.0 LTS: [https://dotnet.microsoft.com/download/visual-studio-sdks](https://dotnet.microsoft.com/download/visual-studio-sdks)
-      - .NET 6.0 x64 Visual Studio 2022 SDK
-   - Firefox: [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/). Firefox is useful because it allows you to create a manual proxy rather than using Windows defaults, as Chrome and Edge require. This will be helpful in Exercise 4.
+   - Docker (without WSL)
+     - [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/)
+     - **Note:** Make sure to UNCHECK to use WSL during installation. This will cause issue with docker
+   - Visual Studio Code (System Installer):
+     - [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+     - Make sure this finishes before installing Git so you can set it as the default editor
+   - Java (for JMeter):
+     - [https://www.java.com/en/download/](https://www.java.com/en/download/)
+   - Apache JMeter:
+     - [https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip](https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.2.zip)
+     - Extract the apache-jmeter-5.6.2 folder to C:\
+   - Azure Storage Explorer (Install for all users):
+     - [https://azure.microsoft.com/products/storage/storage-explorer/](https://azure.microsoft.com/products/storage/storage-explorer/)
+   - Git bash:
+     - [https://git-scm.com/download/win](https://git-scm.com/download/win)
+     - 64bit git for Windows Setup
+     - You may want to set the default editor to VSCode, keep the defaults for everything else.
+   - .NET SDK 6.0 LTS:
+     - [https://dotnet.microsoft.com/download/visual-studio-sdks](https://dotnet.microsoft.com/download/visual-studio-sdks)
+     - .NET 6.0 x64 Visual Studio 2022 SDK
+   - Firefox:
+     - [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/).
+     - Firefox is useful because it allows you to create a manual proxy rather than using Windows defaults, as Chrome and Edge require. This will be helpful in Exercise 4.
 4. Reboot after installing all of the software and ensure that Docker is running before performing a sysprep.
    - **Important:** At this point in time, take a snapshot of the OS disk on your VM so you can make updates to it later if needed. Once you sysprep a VM you can't boot it back up again to make changes.
 5. Perform sysprep. To do so:
