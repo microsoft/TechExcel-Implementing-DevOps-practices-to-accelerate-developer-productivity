@@ -77,15 +77,16 @@ Now you're ready to start creating a custom image to deploy your Dev Box.
 13. Set Default storage sku to Premium SSD LRS
 14. The configuration should look like this. Then create the image
     ![VM Image Creation](Media/VMImageCreate.png)
-    -**Note**: This step can take a little bit to complete
+    -**Note**: This step can take some time to complete. If it hasn't completely after about 20 minute, students can proceed to Exercise 2 and use their own machines. They can check on that status periodically, and once it completes, move on to Task 3. It's OK to use their own machine for Day 1 and use the Dev Box on day 2.
 
 ## Task 3 - Deploy a Microsoft Dev Box
 
 1. Navigate back to your Dev Center, go to Identity and turn on a system assigned Managed Identity
    ![Enabled Dev Center Managed Identity](Media/DevCenterManagedIdentity.png)
-2. Once it's been abled, in the Dev Center and add the compute gallery that was created in Task 2
+2. Once it's been enabled, in the Dev Center and add the compute gallery that was created in Task 2
    ![Add Compute Gallery](Media/AddComputeGallery.png)
-3. Go to you Dev box definitions, and create a new definition. Use the image you created in Task 2
+3. Go to you Dev box definitions, and create a new definition. Use the image you created in Task 2.
+    -**Note**: The verification of the definition can also take some time to complete. If it hasn't completely after about 20 minute, students can proceed to continue on with exercise 2 and using their own machines. They can check on that status periodically, and once it completes, finish up Task 3. It's OK to use another machine (there own or another VM) for Day 1 and use the Dev Box on day 2.
    ![Dev Box Definition](Media/DevBoxDefinition.png)
 4. After the definition has been created and the image status verified, go to Projects and open up your MPPTeamMessagingSystem Project
    ![Definition Verification](Media/DefinitionVerification.png)

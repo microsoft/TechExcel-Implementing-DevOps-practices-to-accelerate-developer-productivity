@@ -86,7 +86,7 @@ If developers are working on multiple projects, they may even have challenges wi
    - VM version number can be 1.0.0
    - Default storage SKU: Premium SD LRS
    - Review + create --> Create
-   - It can take several minutes for the image to be created.
+   - **Important**: It can take anywhere from 20 minutes to an hour to create the image. If it still hasn't completed after 15 or 20 minutes. You can start on Exercise 2 using a different machine. Task 3 of exercise 1 depends on the completely of this image creating.  It is ok to use your own computer for Day 1 and use the Dev Box on day 2.
 
 ### Success Criteria
 
@@ -123,6 +123,7 @@ In this task you'll take everything you configured in the first two tasks and us
 Now that you have the custom image with all your software installed, developers will need to be able to use that image to create and run their own development box.
 
 - Create a dev box definition with a custom image
+  - **Important**: It can take anywhere from 20 minutes to an hour to validate the VM definition created from the custom image. If it still hasn't completed after 15 or 20 minutes. You can continue on with the lab using a different machine. Once the verification is successful you can come back to finish Task 3. It is ok to use your own computer for Day 1 and use the Dev Box on day 2.
 - Create a dev box pool within your project
 - Create and log in to your own dev box and use the tools you configured in the custom image
 
