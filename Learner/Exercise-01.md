@@ -61,7 +61,7 @@ If developers are working on multiple projects, they may even have challenges wi
 1. Create a compute gallery & add it to the Dev center
 2. Create a custom image using Windows 11 Enterprise, version 22H2 - x64 Gen2
    - Note: Make sure you select enterprise and not pro. Pro is not supported for Dev Box.
-3. Include the following software on the custom image:
+3. Include the following software on the custom image. If you have any issues selecting and copying the link you can also right click the link and select "Copy Link".
    - Docker (without WSL)
      - [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/)
      - **Note:** Make sure to UNCHECK to use WSL during installation. This will cause issue with docker
