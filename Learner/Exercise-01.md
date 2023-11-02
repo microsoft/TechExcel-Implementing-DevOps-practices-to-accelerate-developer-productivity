@@ -1,3 +1,10 @@
+---
+title: 'Exercise 01: Set up development environment'
+layout: default
+nav_order: 3
+has_children: true
+---
+
 # Exercise 01 - Set up development environment (120 minutes)
 
 ## Prerequisites
@@ -86,7 +93,10 @@ If developers are working on multiple projects, they may even have challenges wi
      - [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/).
      - Firefox is useful because it allows you to create a manual proxy rather than using Windows defaults, as Chrome and Edge require. This will be helpful in Exercise 4.
 4. Reboot after installing all of the software and ensure that Docker is running before performing a sysprep.
-   - **Important:** At this point in time, take a snapshot of the OS disk on your VM so you can make updates to it later if needed. Once you sysprep a VM you can't boot it back up again to make changes.
+
+{: .important }
+> **Important:** At this point in time, take a snapshot of the OS disk on your VM so you can make updates to it later if needed. Once you sysprep a VM you can't boot it back up again to make changes.
+
 5. Perform sysprep. To do so:
    - Delete C:\Windows\Panther and empty the recycle bin
    - In the command prompt, CD to C:\Windows\System32\SysPrep and run `sysprep.exe /oobe /generalize /shutdown`
@@ -95,7 +105,9 @@ If developers are working on multiple projects, they may even have challenges wi
    - VM version number can be 1.0.0
    - Default storage SKU: Premium SD LRS
    - Review + create --> Create
-   - **Important**: It can take anywhere from 20 minutes to an hour to create the image. If it still hasn't completed after 15 or 20 minutes. You can start on Exercise 2 using a different machine. Task 3 of exercise 1 depends on the completely of this image creating.  It is ok to use your own computer for Day 1 and use the Dev Box on day 2.
+  
+{: .important }
+> **Important**: It can take anywhere from 20 minutes to an hour to create the image. If it still hasn't completed after 15 or 20 minutes. You can start on Exercise 2 using a different machine. Task 3 of exercise 1 depends on the completely of this image creating.  It is ok to use your own computer for Day 1 and use the Dev Box on day 2.
 
 ### Success Criteria
 
@@ -132,7 +144,11 @@ In this task you'll take everything you configured in the first two tasks and us
 Now that you have the custom image with all your software installed, developers will need to be able to use that image to create and run their own development box.
 
 - Create a dev box definition with a custom image
-  - **Important**: It can take anywhere from 20 minutes to an hour to validate the VM definition created from the custom image. If it still hasn't completed after 15 or 20 minutes. You can continue on with the lab using a different machine. Once the verification is successful you can come back to finish Task 3. It is ok to use your own computer for Day 1 and use the Dev Box on day 2.
+
+
+{: .important }
+> **Important**: It can take anywhere from 20 minutes to an hour to validate the VM definition created from the custom image. If it still hasn't completed after 15 or 20 minutes. You can continue on with the lab using a different machine. Once the verification is successful you can come back to finish Task 3. It is ok to use your own computer for Day 1 and use the Dev Box on day 2.
+
 - Create a dev box pool within your project
 - Create and log in to your own dev box and use the tools you configured in the custom image
 
@@ -147,4 +163,6 @@ Now that you have the custom image with all your software installed, developers 
 - To access the Dev Portal for logging in as a user visit: [https://devportal.microsoft.com/](https://devportal.microsoft.com/).
 - Ensure you assign the [appropriate RBAC roles](https://learn.microsoft.com/en-us/azure/dev-box/how-to-dev-box-user) for the users who to access the dev portal to login to a virtual machine.
 - The first time you need a virtual machine, you need to first create it. It can take a little bit to create the VM the first time.
-- **Note**: It's possible that Docker for Desktop causes issues following the creation of your Dev Box due to the custom image. To resolve, it may need to be uninstalled/reinstalled once your Dev Box is created.
+
+{: .note }
+> **Note**: It's possible that Docker for Desktop causes issues following the creation of your Dev Box due to the custom image. To resolve, it may need to be uninstalled/reinstalled once your Dev Box is created.
