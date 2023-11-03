@@ -1,3 +1,10 @@
+---
+title: 'Exercise 5: Make things secure'
+layout: default
+nav_order: 7
+has_children: false
+---
+
 # Exercise 05 - Make things secure (60 minutes)
 
 ## Task 01 - Branching & Policies (20 minutes)
@@ -95,7 +102,9 @@ In this task we will look at some of the telemetry that has already been collect
 ### Success Criteria
 
 - You should understand the importance of monitoring and some of the basic features offered by Application Insights.
-  - **NOTE**: We are just scratching the surface of what is offered in Azure Monitoring, if you are interested in learning more there is a full What the Hack focused on [Azure Monitoring](https://github.com/microsoft/WhatTheHack/tree/master/007-AzureMonitoring).
+
+{: .note }
+> **NOTE**: We are just scratching the surface of what is offered in Azure Monitoring, if you are interested in learning more there is a full What the Hack focused on [Azure Monitoring](https://github.com/microsoft/WhatTheHack/tree/master/007-AzureMonitoring).
 
 ### Learning Resources
 
