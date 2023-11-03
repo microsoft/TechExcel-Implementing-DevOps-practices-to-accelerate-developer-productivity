@@ -1,3 +1,10 @@
+---
+title: 'Exercise 03: Improve and deploy your application'
+layout: default
+nav_order: 5
+has_children: false
+---
+
 # Exercise 03 - Improve and deploy your application (90 minutes)
 
 ## Task 1 - Configure Microsoft Copilot on your Dev Box (15 minutes)
