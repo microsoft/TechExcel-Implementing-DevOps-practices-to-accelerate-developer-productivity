@@ -1,3 +1,10 @@
+---
+title: 'Exercise 4: Implement load testing and secure practices'
+layout: default
+nav_order: 6
+has_children: false
+---
+
 # Exercise 04 - Implement load testing and secure practices (120 minutes)
 
 ## Task 1 - Implement load testing (15 minutes)
