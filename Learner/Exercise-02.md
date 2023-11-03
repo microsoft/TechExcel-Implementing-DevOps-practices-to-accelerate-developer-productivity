@@ -1,3 +1,10 @@
+---
+title: 'Lab 2: Start working in GitHub'
+layout: default
+nav_order: 4
+has_children: false
+---
+
 # Exercise 02 - Start working in GitHub (45 minutes)
 
 ## Task 1 - Set up a GitHub repository (10 minutes)
@@ -104,7 +111,10 @@ The IT team at Munson's Pickles and Preserves would like to see how GitHub Actio
 2. Add a job called `job1` to the workflow. The job should include two steps. Each step will be a simple CLI command to echo out the phrases "Step 1 complete!" and "Step 2 complete!" respectively.
 3. Manually trigger the workflow you created. Check the log file for the workflow run and ensure that your job succeeded, emitting the echo statements as expected.
 4. Add a second job to this workflow and call it `job2`. In this job, add a single step. This step should call a GitHub Action from the GitHub Marketplace. Find the "Cowsays" action in the marketplace and configure this action to emit the text "Ready for prod--ship it!" in magenta font color. 
-   -  *Note* When you run this job, the log output may print in some other color instead of magenta.
+
+{: .note }
+> *Note* When you run this job, the log output may print in some other color instead of magenta.
+
 5. Execute your workflow again, ensuring that both jobs run as expected and that the two jobs run in parallel.
 6. Modify `first-workflow.yml` to ensure that `job2` does not run until `job1` completes.
 7. Execute the workflow again to test the sequence.
