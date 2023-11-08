@@ -7,15 +7,6 @@ has_children: false
 ---
 
 # Exercise 01 - Set up development environment (120 minutes)
-{" .no_toc }
-
-## Tasks
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
 
 ## Prerequisites
 
