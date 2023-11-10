@@ -9,7 +9,7 @@ has_children: true
 
 ## Lab Scenario
 
-Munson's Pickles and Preserves has a large number of developers on their team, working on a variety of projects. One of those projects is the Team Messaging System. A challenge that Munson's Pickles and Preservers has with development is getting developers machines configured properly in a timely manner when they need to work on these projects.
+Munson's Pickles and Preserves has a large number of developers on their team, working on a variety of projects. One of those projects is the Team Messaging System. A challenge that Munson's Pickles and Preserves has with development is getting developers machines configured properly in a timely manner when they need to work on these projects.
 
 Developers occasionally will also be working on two projects simultaneously that require different configurations or various version for the same software packages, making it challenging to keep their development computer consistent when working on the two projects. In the past, MPP has also had issues with one developer’s computer being configured slightly differently that another developer’s so the code they were developing behaved differently in different circumstances.
 
