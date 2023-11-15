@@ -6,7 +6,7 @@ theme: just-the-docs
 
 aux_links:
   "Implementing DevOps practices to accelerate developer productivity": 
-    - "https://github.com/microsoft/TechExcel-Implementing-DevOps-practices-to-accelerate-developer-productivity-code"
+    - "https://github.com/microsoft/TechExcel-Implementing-DevOps-practices-to-accelerate-developer-productivity"
 
 
 callouts_level: quiet # or loud
