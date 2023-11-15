@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-# Lab: Implementing DevOps practices to accelerate developer productivity
+# TechExcel: Implementing DevOps practices to accelerate developer productivity
 
 This lab teaches you how to make use of a variety of GitHub features for code management, project management, and Continuous Integration and Continuous Delivery (CI/CD) via GitHub Actions workflows. In addition, you will learn how to create load tests using Apache JMeter and automate them using the Azure Load Test service and GitHub Actions workflows. Finally, you will learn about mechanisms available to secure a GitHub repository.
 
