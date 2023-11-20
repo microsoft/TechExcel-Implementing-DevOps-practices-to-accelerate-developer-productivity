@@ -5,7 +5,7 @@ nav_order: 4
 has_children: true
 ---
 
-# Exercise 03 - Improve and deploy your application
+# Exercise 03 Solution - Improve and deploy your application
 
 ## Lab Scenario
 
