@@ -1,4 +1,11 @@
-# Exercise 05 - Make things secure
+---
+title: 'Exercise 05: Make things secure'
+layout: default
+nav_order: 6
+has_children: true
+---
+
+# Exercise 05 Solution - Make things secure
 
 ## Lab Scenario
 
