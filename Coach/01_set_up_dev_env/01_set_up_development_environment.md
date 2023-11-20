@@ -1,4 +1,11 @@
-# Exercise 01 - Set up development environment
+---
+title: 'Exercise 01: Set up development environment'
+layout: default
+nav_order: 2
+has_children: true
+---
+
+# Exercise 01 Solution - Set up development environment
 
 ## Lab Scenario
 
