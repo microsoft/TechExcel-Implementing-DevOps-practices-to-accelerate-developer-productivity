@@ -1,3 +1,10 @@
+---
+title: 'Exercise 03: Improve and deploy your application'
+layout: default
+nav_order: 4
+has_children: true
+---
+
 # Exercise 03 - Improve and deploy your application
 
 ## Lab Scenario
