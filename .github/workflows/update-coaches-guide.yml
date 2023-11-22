@@ -14,11 +14,15 @@ jobs:
         with:
           ref: main
 
-      - name: Copy files to Coaches-guide branch
+      - name: Setup Coaches-guide branch
         run: |
-          git checkout -b Coaches-guide
-          git rm -rf .
-          cp -r ${{ github.workspace }}/* .
-          git add .
-          git commit -m "Update Coaches-guide branch"
+          git fetch origin Coaches-guide:Coaches-guide || git branch Coaches-guide
+          git checkout Coaches-guide
+
+      - name: Copy files from main to Coaches-guide excluding .github
+        run: |
+          git checkout main -- .
+          git reset HEAD .github/
+          git checkout -- .github/
+          git commit -m "Update Coaches-guide branch with changes from main excluding .github"
           git push origin Coaches-guide
