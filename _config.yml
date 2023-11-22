@@ -1,4 +1,4 @@
-title: TechExcel: Implementing DevOps Practices
+title: Implementing DevOps Practices
 description: This lab walks you through setting up the development environment, deploying your appication, and implementing load testing and secure practices.
 theme: just-the-docs
 
@@ -20,7 +20,7 @@ callouts:
     title: New
     color: green
   note:
-    title: Note
+    title: Note 
     color: purple
   warning:
     title: Warning
