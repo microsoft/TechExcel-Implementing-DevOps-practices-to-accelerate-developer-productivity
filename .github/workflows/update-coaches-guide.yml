@@ -9,16 +9,13 @@ jobs:
   update-coaches-guide:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
+      - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          ref: main
+          fetch-depth: 0
 
-      - name: Copy files to Coaches-guide branch
+      - name: Update Coaches-guide Branch
         run: |
-          git checkout -b Coaches-guide
-          git rm -rf .
-          cp -r ${{ github.workspace }}/* .
-          git add .
-          git commit -m "Update Coaches-guide branch"
+          git checkout Coaches-guide || git checkout -b Coaches-guide
+          git reset --hard main
           git push origin Coaches-guide
