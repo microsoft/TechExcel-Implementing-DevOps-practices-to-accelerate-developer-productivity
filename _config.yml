@@ -1,11 +1,11 @@
-title: DevOps practices for productivity
+title: Implementing DevOps Practices
 description: This lab walks you through setting up the development environment, deploying your appication, and implementing load testing and secure practices.
 theme: just-the-docs
 
 # url: https://microsoft.github.io/TechExcel-Implementing-DevOps-practices-to-accelerate-developer-productivity/
 
 aux_links:
-  "Implementing DevOps practices to accelerate developer productivity": 
+  "TechExcel: Implementing DevOps practices to accelerate developer productivity": 
     - "https://github.com/microsoft/TechExcel-Implementing-DevOps-practices-to-accelerate-developer-productivity"
 
 
@@ -20,7 +20,7 @@ callouts:
     title: New
     color: green
   note:
-    title: Note
+    title: Note 
     color: purple
   warning:
     title: Warning
