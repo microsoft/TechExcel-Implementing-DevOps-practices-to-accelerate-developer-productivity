@@ -14,6 +14,11 @@ jobs:
         with:
           ref: main
 
+      - name: Configure Git User
+        run: |
+          git config --global user.email "timofeymarder@gmail.com"
+          git config --global user.name "timofeymarder"
+
       - name: Setup Coaches-guide branch
         run: |
           git fetch origin Coaches-guide:Coaches-guide || git branch Coaches-guide
