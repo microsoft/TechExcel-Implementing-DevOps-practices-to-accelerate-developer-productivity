@@ -29,4 +29,5 @@ jobs:
           git checkout main -- .
           git reset HEAD .github/
           git checkout -- .github/
+          git commit -m "Update Coaches-guide branch with changes from main excluding .github"
           git push origin Coaches-guide
