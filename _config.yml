@@ -7,11 +7,8 @@ theme: just-the-docs
 aux_links:
   "TechExcel: Implementing DevOps practices to accelerate developer productivity": 
     - "https://github.com/microsoft/TechExcel-Implementing-DevOps-practices-to-accelerate-developer-productivity"
-# Coaches-guide
-
 exclude:
-  - docs/  # to exclude docs folder
-
+  - Coach/
 callouts_level: quiet # or loud
 callouts:
   highlight:
