@@ -10,7 +10,7 @@ aux_links:
 # Coaches-guide
 
 exclude:
-  - docs/  # to exclude docs folder
+  - Coach/  # to exclude docs folder
 
 callouts_level: quiet # or loud
 callouts:
