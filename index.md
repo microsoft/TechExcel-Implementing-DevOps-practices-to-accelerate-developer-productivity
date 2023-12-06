@@ -18,7 +18,7 @@ This lab has exercises on:
 * Implement load testing and secure practices
 * Make things secure
 
-The lab is available as GitHub pages [here](https://azure-samples.github.io/...)
+The lab is available as GitHub pages [here](https://microsoft.github.io/TechExcel-Implementing-DevOps-practices-to-accelerate-developer-productivity)
 
 ## Prerequisites
 
