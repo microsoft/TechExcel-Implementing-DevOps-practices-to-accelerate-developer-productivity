@@ -9,7 +9,6 @@ aux_links:
     - "https://github.com/microsoft/TechExcel-Implementing-DevOps-practices-to-accelerate-developer-productivity"
 exclude:
   - Coach/
-  - Solution/
 callouts_level: quiet # or loud
 callouts:
   highlight:
