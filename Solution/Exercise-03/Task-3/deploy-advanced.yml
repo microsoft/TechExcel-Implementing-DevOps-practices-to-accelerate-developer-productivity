@@ -13,6 +13,10 @@ name: Azure Bicep-Advanced
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
     # Checkout code
     - uses: actions/checkout@main
