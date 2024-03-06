@@ -25,4 +25,4 @@ After you complete this lab, you will be able to:
 
 ## Lab Duration
 
-* **Estimated Time:** 120 minutes
+* **Estimated Time:** 135 minutes
